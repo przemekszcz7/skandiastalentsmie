@@ -150,29 +150,34 @@ export default function About() {
       </section>
 
       {/* Stats / Effort */}
-      <section className="bg-blue-600 text-white p-16 md:p-24 rounded-[4rem] relative overflow-hidden shadow-2xl shadow-blue-900/20">
+      <section className="bg-blue-600 text-white p-12 md:p-24 rounded-[4rem] relative overflow-hidden shadow-2xl shadow-blue-900/20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
           <div className="space-y-8">
             <div className="inline-flex items-center gap-3 px-4 py-1.5 bg-white/20 rounded-full text-xs font-bold uppercase tracking-widest">
               <Clock size={16} /> Nasz wkład
             </div>
-            <h2 className="text-5xl font-serif font-bold leading-tight italic">
+            <h2 className="text-4xl md:text-6xl font-serif font-bold leading-tight italic">
               Nie jesteśmy „organizacją na papierze”. Jesteśmy ruchem ludzi.
             </h2>
             <p className="text-blue-50 leading-relaxed text-xl italic font-serif">
               Przy około 95 aktywnościach rocznie, nasi wolontariusze wkładają ponad 5 700 godzin pracy społecznej. To energia społeczna — największy kapitał regionu.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="space-y-8 sm:space-y-10 w-full lg:max-w-md ml-auto">
             {[
-              { val: "69", label: "Członków Składkowych" },
-              { val: "1000+", label: "Sympatyków" },
-              { val: "30", label: "Aktywnych Wolontariuszy" },
-              { val: "5700", label: "Godzin Społecznych" }
+              { val: "69", label: "Członków Składkowych", icon: Users },
+              { val: "1000+", label: "Sympatyków", icon: Heart },
+              { val: "30", label: "Aktywnych Wolontariuszy", icon: Sparkles },
+              { val: "5700", label: "Godzin Społecznych", icon: Clock }
             ].map((stat, i) => (
-              <div key={i} className="bg-white/10 p-8 rounded-[2rem] border border-white/10 backdrop-blur-sm">
-                <p className="text-5xl font-serif font-bold mb-2">{stat.val}</p>
-                <p className="text-[10px] uppercase tracking-widest opacity-60 font-bold">{stat.label}</p>
+              <div key={i} className="flex items-center gap-6 sm:gap-8 group">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white/10 rounded-2xl flex items-center justify-center text-white border border-white/20 group-hover:scale-110 transition-transform flex-shrink-0">
+                  <stat.icon size={28} />
+                </div>
+                <div className="space-y-2 min-w-0">
+                  <p className="text-4xl md:text-5xl font-serif font-bold leading-none">{stat.val}</p>
+                  <p className="text-[10px] sm:text-xs uppercase tracking-[0.2em] opacity-60 font-bold">{stat.label}</p>
+                </div>
               </div>
             ))}
           </div>

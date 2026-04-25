@@ -10,7 +10,7 @@ export default function JoinUs() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-24 pb-20">
       <header className="space-y-8 text-center">
-        <h1 className="text-5xl md:text-7xl font-serif font-bold tracking-tight text-slate-900">Dołącz do <span className="text-blue-600">naszej kuźni</span>! 📢</h1>
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif font-bold tracking-tight text-slate-900">Dołącz do <span className="text-blue-600">naszej kuźni</span>! 📢</h1>
         <p className="text-2xl text-sky-600 max-w-4xl mx-auto leading-relaxed font-serif italic">
           Masz duszę artysty? Tworzysz coś wyjątkowego własnymi rękami?
           Skandias Talentsmie to przestrzeń dla wszystkich, którzy chcą rozwijać swoje pasje i dzielić się nimi z innymi.
@@ -84,7 +84,7 @@ export default function JoinUs() {
            <Heart size={400} className="mx-auto" />
         </div>
         <div className="relative z-10 space-y-4">
-          <h2 className="text-5xl md:text-7xl font-serif font-bold italic">Zostań częścią kuźni</h2>
+          <h2 className="text-3xl sm:text-5xl md:text-7xl font-serif font-bold italic">Zostań częścią kuźni</h2>
           <p className="text-2xl text-blue-50 max-w-2xl mx-auto font-serif italic">
             Stań się częścią społeczności, która łączy kreatywne dusze i twórcze ręce w Norwegii.
           </p>
@@ -93,7 +93,7 @@ export default function JoinUs() {
           <Link to="/kontakt" className="px-14 py-5 bg-white text-blue-600 rounded-full font-bold text-xl hover:scale-105 transition-all shadow-xl">
             Dołącz jako członek
           </Link>
-          <Link to="/kontakt" className="px-14 py-5 border-2 border-white/30 text-white rounded-full font-bold text-xl hover:bg-white/10 transition-all">
+          <Link to="/kontakt" className="px-4 sm:px-14 py-5 border-2 border-white/30 text-white rounded-full font-bold text-lg sm:text-xl hover:bg-white/10 transition-all whitespace-nowrap">
             Zostań koordynatorem
           </Link>
         </div>
@@ -101,7 +101,7 @@ export default function JoinUs() {
           <div className="flex flex-col items-center gap-4">
             <Icons.Mail size={24} className="opacity-60" />
             <p className="text-sm opacity-80 uppercase tracking-widest font-bold">Skontaktuj się z nami</p>
-            <a href="mailto:post@skandiatalentsmie.no" className="text-3xl font-serif font-bold hover:text-blue-200 transition-colors italic">post@skandiatalentsmie.no</a>
+            <a href="mailto:post@skandiatalentsmie.no" className="text-lg sm:text-2xl md:text-3xl font-serif font-bold hover:text-blue-200 transition-colors italic whitespace-nowrap">post@skandiatalentsmie.no</a>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-8 w-full max-w-3xl">

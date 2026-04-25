@@ -37,7 +37,7 @@ const GrantsInfo: React.FC = () => {
       </header>
 
       {/* Section 1: Location */}
-      <section className="bg-white p-12 md:p-16 rounded-[4rem] border border-blue-50 shadow-sm space-y-10 relative overflow-hidden">
+      <section className="bg-white p-8 sm:p-12 md:p-16 rounded-[4rem] border border-blue-50 shadow-sm space-y-10 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 opacity-[0.03] pointer-events-none transform translate-x-1/2 -translate-y-1/2">
           <MapPin size={300} />
         </div>
@@ -95,7 +95,7 @@ const GrantsInfo: React.FC = () => {
       </section>
 
       {/* Section 3: Volunteers - The Heart */}
-      <section className="bg-sky-600 text-white p-12 md:p-20 rounded-[5rem] space-y-12 shadow-2xl shadow-sky-900/20 relative overflow-hidden">
+      <section className="bg-sky-600 text-white p-8 sm:p-12 md:p-20 rounded-[5rem] space-y-12 shadow-2xl shadow-sky-900/20 relative overflow-hidden">
         <div className="absolute bottom-0 left-0 w-full h-full opacity-5 pointer-events-none">
           <Heart size={400} className="mx-auto translate-y-1/4" />
         </div>
@@ -182,7 +182,7 @@ const GrantsInfo: React.FC = () => {
       </section>
 
       {/* Section 5: Goals & Numbers */}
-      <section className="bg-slate-50 p-12 md:p-20 rounded-[5rem] border border-blue-100 space-y-16">
+      <section className="bg-slate-50 p-8 sm:p-12 md:p-20 rounded-[5rem] border border-blue-100 space-y-16">
         <div className="text-center space-y-4 max-w-2xl mx-auto">
           <h2 className="text-4xl font-serif font-bold text-slate-900">Mierzalne rezultaty (Rok 1)</h2>
           <p className="text-sky-600 font-serif italic text-lg">Nasze cele na najbliższy czas są konkretne i ambitne.</p>
@@ -230,7 +230,7 @@ const GrantsInfo: React.FC = () => {
       </section>
 
       {/* Section 6: Budget Summary */}
-      <section className="bg-white p-12 md:p-20 rounded-[5rem] border border-blue-50 shadow-sm space-y-12">
+      <section className="bg-white p-8 sm:p-12 md:p-20 rounded-[5rem] border border-blue-50 shadow-sm space-y-12">
         <div className="flex items-center gap-6">
           <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 border border-blue-100">
             <Award size={32} />
@@ -244,19 +244,19 @@ const GrantsInfo: React.FC = () => {
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-slate-50 p-8 rounded-[2.5rem] border border-blue-50 space-y-4 flex flex-col min-h-0 break-words">
+            <div className="bg-slate-50 p-6 sm:p-8 rounded-[2.5rem] border border-blue-50 space-y-4 flex flex-col min-h-0 break-words">
               <h4 className="text-sm uppercase font-bold text-slate-400 tracking-widest flex-shrink-0">Adaptacja przestrzeni</h4>
-              <p className="text-3xl font-serif font-bold text-slate-900 flex-shrink-0">300.000 NOK</p>
+              <p className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 flex-shrink-0">300.000 NOK</p>
               <p className="text-xs text-slate-500 font-serif italic leading-relaxed">Remont sali głównej, wyposażenie pracowni, kuchni i altan w ogrodzie.</p>
             </div>
-            <div className="bg-slate-50 p-8 rounded-[2.5rem] border border-blue-50 space-y-4 flex flex-col min-h-0 break-words">
+            <div className="bg-slate-50 p-6 sm:p-8 rounded-[2.5rem] border border-blue-50 space-y-4 flex flex-col min-h-0 break-words">
               <h4 className="text-sm uppercase font-bold text-slate-400 tracking-widest flex-shrink-0">Program Wolontariatu</h4>
-              <p className="text-3xl font-serif font-bold text-slate-900 flex-shrink-0">300.000 NOK</p>
+              <p className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 flex-shrink-0">300.000 NOK</p>
               <p className="text-xs text-slate-500 font-serif italic leading-relaxed">Fundusz dojazdów, Akademia Wolontariatu, ubezpieczenia i koordynacja.</p>
             </div>
-            <div className="bg-slate-50 p-8 rounded-[2.5rem] border border-blue-50 space-y-4 flex flex-col min-h-0 break-words">
+            <div className="bg-slate-50 p-6 sm:p-8 rounded-[2.5rem] border border-blue-50 space-y-4 flex flex-col min-h-0 break-words">
               <h4 className="text-sm uppercase font-bold text-slate-400 tracking-widest flex-shrink-0">Program kulturalny</h4>
-              <p className="text-3xl font-serif font-bold text-slate-900 flex-shrink-0">150.000 NOK</p>
+              <p className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 flex-shrink-0">150.000 NOK</p>
               <p className="text-xs text-slate-500 font-serif italic leading-relaxed">Organizacja jarmarków (2/rok) oraz cyklu warsztatów i wystaw.</p>
             </div>
           </div>
@@ -276,7 +276,7 @@ const GrantsInfo: React.FC = () => {
       </section>
 
       {/* Section 7: Membership & Fees */}
-      <section id="oplaty" className="bg-white p-12 md:p-20 rounded-[5rem] border border-blue-50 shadow-sm space-y-12">
+      <section id="oplaty" className="bg-white p-8 sm:p-12 md:p-20 rounded-[5rem] border border-blue-50 shadow-sm space-y-12">
         <div className="flex flex-col md:flex-row justify-between items-start gap-12">
           <div className="space-y-8 flex-1">
             <h2 className="text-4xl font-serif font-bold italic text-slate-900 flex items-center gap-4">

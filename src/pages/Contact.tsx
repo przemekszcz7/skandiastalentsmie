@@ -58,7 +58,7 @@ export default function Contact() {
                 <button onClick={() => setSent(false)} className="text-xs font-bold text-blue-600 uppercase tracking-[0.2em] pt-4 hover:underline underline-offset-8">Wyślij kolejną</button>
               </div>
             ) : (
-              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 bg-white p-10 md:p-12 rounded-[4rem] border border-blue-50 shadow-sm">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 bg-white p-8 sm:p-10 md:p-12 rounded-[4rem] border border-blue-50 shadow-sm">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-[10px] uppercase font-bold text-slate-400 px-1 tracking-widest">Imię i nazwisko</label>
@@ -93,40 +93,40 @@ export default function Contact() {
         </div>
 
         <div className="space-y-12">
-          <section className="bg-white p-12 rounded-[4rem] border border-blue-50 space-y-10 shadow-sm transform rotate-1">
+          <section className="bg-white p-8 sm:p-12 rounded-[4rem] border border-blue-50 space-y-10 shadow-sm transform rotate-1">
             <h2 className="text-3xl font-serif font-bold text-slate-900">Informacje</h2>
             <div className="space-y-8">
               <div className="flex items-start gap-6">
-                <div className="w-12 h-12 bg-slate-50 border border-blue-50 rounded-2xl flex items-center justify-center text-blue-600">
+                <div className="w-12 h-12 bg-slate-50 border border-blue-50 rounded-2xl flex items-center justify-center text-blue-600 flex-shrink-0">
                   <Mail size={24} />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="text-xs uppercase font-bold text-slate-400 tracking-[0.2em] mb-1">Główny e-mail</p>
-                  <a href="mailto:post@skandiatalentsmie.no" className="text-2xl font-serif font-bold text-slate-900 hover:text-blue-600 transition-colors italic">post@skandiatalentsmie.no</a>
+                  <a href="mailto:post@skandiatalentsmie.no" className="text-xl sm:text-2xl font-serif font-bold text-slate-900 hover:text-blue-600 transition-colors italic break-all">post@skandiatalentsmie.no</a>
                 </div>
               </div>
               <div className="flex items-start gap-6">
-                <div className="w-12 h-12 bg-slate-50 border border-blue-50 rounded-2xl flex items-center justify-center text-blue-600">
+                <div className="w-12 h-12 bg-slate-50 border border-blue-50 rounded-2xl flex items-center justify-center text-blue-600 flex-shrink-0">
                   <Facebook size={24} />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="text-xs uppercase font-bold text-slate-400 tracking-[0.2em] mb-1">Facebook</p>
-                  <a href="https://www.facebook.com/SkandiiKuzniaTalentow" target="_blank" rel="noopener noreferrer" className="text-2xl font-serif font-bold text-slate-900 hover:text-blue-600 transition-colors italic underline decoration-1 underline-offset-8">Odwiedź nas</a>
+                  <a href="https://www.facebook.com/SkandiiKuzniaTalentow" target="_blank" rel="noopener noreferrer" className="text-xl sm:text-2xl font-serif font-bold text-slate-900 hover:text-blue-600 transition-colors italic underline decoration-1 underline-offset-8">Odwiedź nas</a>
                 </div>
               </div>
               <div className="flex items-start gap-6">
-                <div className="w-12 h-12 bg-slate-50 border border-blue-50 rounded-2xl flex items-center justify-center text-blue-600">
+                <div className="w-12 h-12 bg-slate-50 border border-blue-50 rounded-2xl flex items-center justify-center text-blue-600 flex-shrink-0">
                   <MapPin size={24} />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <p className="text-xs uppercase font-bold text-slate-400 tracking-[0.2em] mb-1">Adres główny</p>
-                  <p className="text-2xl font-serif font-bold text-slate-900 italic leading-tight">Agder (Kristiansand / Arendal / Songe)</p>
+                  <p className="text-xl sm:text-2xl font-serif font-bold text-slate-900 italic leading-tight">Agder (Kristiansand / Arendal / Songe)</p>
                 </div>
               </div>
             </div>
           </section>
 
-          <section className="bg-sky-600 text-white p-12 rounded-[3rem] space-y-8 shadow-2xl shadow-sky-900/10">
+          <section className="bg-sky-600 text-white p-8 sm:p-12 rounded-[3rem] space-y-8 shadow-2xl shadow-sky-900/10">
             <h3 className="text-2xl font-serif font-bold italic">E-maile filii i działów:</h3>
             <ul className="text-sm space-y-4 opacity-90 font-serif italic">
               <li className="flex gap-4"><span>❧</span> Członkostwo: medlemskap@skandiatalentsmie.no</li>

@@ -23,7 +23,7 @@ export default function Membership() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-24 pb-20">
       <header className="space-y-8 text-center md:text-left">
-        <h1 className="text-5xl md:text-7xl font-serif font-bold tracking-tight text-slate-900">Członkostwo i <span className="text-blue-600">koordynatorzy</span></h1>
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif font-bold tracking-tight text-slate-900">Członkostwo i <span className="text-blue-600">koordynatorzy</span></h1>
         <p className="text-2xl text-sky-600 max-w-4xl leading-relaxed font-serif italic">
           Skandias Talentsmie to więcej niż stowarzyszenie – to żywa społeczność pełna pasji. Jeśli masz talent, jeśli tworzysz – to jest miejsce, w którym Twój dar zakwitnie! 🌸
         </p>
@@ -46,7 +46,7 @@ export default function Membership() {
             ))}
           </div>
           <div className="pt-8 flex justify-center md:justify-start">
-            <Link to="/kontakt" className="inline-flex items-center gap-4 px-12 py-5 bg-blue-600 text-white rounded-full font-bold text-lg hover:scale-105 transition-all shadow-xl shadow-blue-900/20">
+            <Link to="/kontakt" className="inline-flex items-center gap-4 px-8 sm:px-12 py-5 bg-blue-600 text-white rounded-full font-bold text-base sm:text-lg hover:scale-105 transition-all shadow-xl shadow-blue-900/20">
               Dołącz do nas <ArrowRight size={20} />
             </Link>
           </div>
@@ -59,7 +59,7 @@ export default function Membership() {
               <div className="inline-flex items-center gap-3 px-4 py-1.5 bg-white/20 text-white rounded-full text-xs font-bold uppercase tracking-widest">
                 <Map size={16} /> Projekt 13 × 13
               </div>
-              <h2 className="text-4xl font-serif font-bold italic text-white/95">Zostań koordynatorem</h2>
+              <h2 className="text-3xl sm:text-4xl font-serif font-bold italic text-white/95">Zostań koordynatorem</h2>
               <p className="text-xl text-blue-50 leading-relaxed italic font-serif">
                 Szukamy liderów w każdym z 13 województw Norwegii. Koordynator to serce i twarz regionalnej filii. Szukamy osób z energią, które kochają jednoczyć ludzi i inspirować innych.
               </p>
@@ -102,7 +102,7 @@ export default function Membership() {
           </p>
           <div className="flex flex-col items-center gap-6">
             <p className="text-sm text-blue-600 uppercase tracking-[0.4em] font-bold">Energia społeczna to nasz kapitał</p>
-            <Link to="/kontakt" className="inline-block px-12 py-5 border-4 border-blue-600 text-blue-600 rounded-full font-bold text-xl hover:bg-blue-600 hover:text-white transition-all shadow-md active:translate-y-1">
+            <Link to="/kontakt" className="inline-block px-8 sm:px-12 py-5 border-4 border-blue-600 text-blue-600 rounded-full font-bold text-lg sm:text-xl hover:bg-blue-600 hover:text-white transition-all shadow-md active:translate-y-1">
               Zgłoś chęć pomocy
             </Link>
           </div>
