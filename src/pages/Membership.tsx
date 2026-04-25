@@ -46,7 +46,7 @@ export default function Membership() {
             ))}
           </div>
           <div className="pt-8 flex justify-center md:justify-start">
-            <Link to="/kontakt" className="inline-flex items-center gap-4 px-8 sm:px-12 py-5 bg-blue-600 text-white rounded-full font-bold text-base sm:text-lg hover:scale-105 transition-all shadow-xl shadow-blue-900/20">
+            <Link to="/kontakt" className="w-full sm:w-auto inline-flex items-center justify-center gap-4 px-8 sm:px-12 py-5 bg-blue-600 text-white rounded-full font-bold text-base sm:text-lg hover:scale-105 transition-all shadow-xl shadow-blue-900/20">
               Dołącz do nas <ArrowRight size={20} />
             </Link>
           </div>
@@ -76,7 +76,7 @@ export default function Membership() {
 
           <div className="bg-white p-12 border border-blue-50 rounded-[4rem] space-y-8 shadow-sm">
             <h3 className="text-2xl font-serif font-bold flex items-center gap-4 text-slate-900">
-              <ShieldCheck className="text-blue-600" /> Jakie wsparcie oferujemy?
+              <ShieldCheck className="text-blue-600 flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10" /> Jakie wsparcie oferujemy?
             </h3>
             <p className="text-lg text-slate-500 italic font-serif leading-relaxed">Nikt nie działa sam! Każda filia otrzyma od nas:</p>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm font-serif font-bold text-slate-600 italic">

@@ -25,9 +25,9 @@ export default function Projects() {
           <p className="text-slate-600 leading-relaxed font-serif text-lg italic">
             Masz wizję na nowe warsztaty? Chciałbyś zorganizować kiermasz w swoim mieście? Wypełnij krótki formularz, a my pomożemy Ci to zrealizować.
           </p>
-          <button className="w-full py-5 bg-blue-600 text-white rounded-full font-bold text-base sm:text-lg shadow-xl shadow-blue-900/20 hover:scale-[1.02] transition-all whitespace-normal px-4">
+          <Link to="/kontakt" className="block w-full py-5 bg-blue-600 text-white rounded-full font-bold text-base sm:text-lg shadow-xl shadow-blue-900/20 hover:scale-[1.02] transition-all whitespace-normal px-4 text-center">
             Formularz zgłoszeniowy
-          </button>
+          </Link>
         </section>
 
         <section className="bg-sky-600 text-white p-8 sm:p-12 rounded-[4rem] border border-blue-100 space-y-10 shadow-2xl shadow-sky-900/10 transform rotate-1">

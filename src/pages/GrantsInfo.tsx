@@ -280,7 +280,7 @@ const GrantsInfo: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-start gap-12">
           <div className="space-y-8 flex-1">
             <h2 className="text-4xl font-serif font-bold italic text-slate-900 flex items-center gap-4">
-              <Banknote className="text-blue-600" /> Opłata i członkostwo
+              <Banknote className="text-blue-600 flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12" /> Opłata i członkostwo
             </h2>
             <div className="p-10 bg-blue-600 text-white rounded-[3rem] shadow-xl shadow-blue-900/20 relative overflow-hidden group">
               <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 transition-transform">

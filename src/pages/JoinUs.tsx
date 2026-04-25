@@ -41,8 +41,8 @@ export default function JoinUs() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <section className="bg-slate-50 p-12 rounded-[4rem] border border-blue-50 space-y-10 shadow-inner">
-          <h2 className="text-4xl font-serif font-bold flex items-center gap-4 text-slate-900">
-            <Icons.Lightbulb className="text-blue-600" size={32} /> Dlaczego warto?
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold flex items-center gap-4 text-slate-900">
+            <Icons.Lightbulb className="text-blue-600 flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12" /> Dlaczego warto?
           </h2>
           <div className="space-y-6">
             {[
@@ -59,9 +59,9 @@ export default function JoinUs() {
           </div>
         </section>
 
-        <section className="bg-white p-12 rounded-[4rem] border border-blue-50 space-y-10 shadow-sm transform rotate-1">
-          <h2 className="text-4xl font-serif font-bold flex items-center gap-4 text-slate-900">
-            <Icons.Gift className="text-blue-600" size={32} /> Co oferujemy?
+        <section className="bg-white p-8 sm:p-12 rounded-[4rem] border border-blue-50 space-y-10 shadow-sm transform rotate-1">
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold flex items-center gap-4 text-slate-900">
+            <Icons.Gift className="text-blue-600 flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12" /> Co oferujemy?
           </h2>
           <div className="space-y-6 font-serif italic">
             {[
@@ -90,10 +90,10 @@ export default function JoinUs() {
           </p>
         </div>
         <div className="flex flex-col sm:flex-row justify-center gap-6 relative z-10">
-          <Link to="/kontakt" className="px-14 py-5 bg-white text-blue-600 rounded-full font-bold text-xl hover:scale-105 transition-all shadow-xl">
+          <Link to="/kontakt" className="px-14 py-5 bg-white text-blue-600 rounded-full font-bold text-lg sm:text-xl text-center hover:scale-105 transition-all shadow-xl">
             Dołącz jako członek
           </Link>
-          <Link to="/kontakt" className="px-4 sm:px-14 py-5 border-2 border-white/30 text-white rounded-full font-bold text-lg sm:text-xl hover:bg-white/10 transition-all whitespace-nowrap">
+          <Link to="/kontakt" className="px-6 sm:px-14 py-5 border-2 border-white/30 text-white rounded-full font-bold text-sm sm:text-xl text-center hover:bg-white/10 transition-all">
             Zostań koordynatorem
           </Link>
         </div>
