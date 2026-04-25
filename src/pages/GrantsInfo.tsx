@@ -268,7 +268,7 @@ const GrantsInfo: React.FC = () => {
           </p>
           <a 
             href="#oplaty" 
-            className="px-10 py-4 bg-blue-600 text-white rounded-full font-bold shadow-xl shadow-blue-900/20 hover:scale-105 transition-all text-center whitespace-nowrap"
+            className="w-full sm:w-auto px-10 py-4 bg-blue-600 text-white rounded-full font-bold shadow-xl shadow-blue-900/20 hover:scale-105 transition-all text-center"
           >
             Wesprzyj naszą misję
           </a>
@@ -277,51 +277,114 @@ const GrantsInfo: React.FC = () => {
 
       {/* Section 7: Membership & Fees */}
       <section id="oplaty" className="bg-white p-8 sm:p-12 md:p-20 rounded-[5rem] border border-blue-50 shadow-sm space-y-12">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-12">
-          <div className="space-y-8 flex-1">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
+          <div className="space-y-8 flex-1 w-full">
             <h2 className="text-4xl font-serif font-bold italic text-slate-900 flex items-center gap-4">
-              <Banknote className="text-blue-600 flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12" /> Opłata i członkostwo
+              <Banknote className="text-blue-600 flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12" /> Zostań członkiem
             </h2>
-            <div className="p-10 bg-blue-600 text-white rounded-[3rem] shadow-xl shadow-blue-900/20 relative overflow-hidden group">
+            <div className="p-10 bg-blue-600 text-white rounded-[4rem] shadow-xl shadow-blue-900/20 relative overflow-hidden group">
               <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 transition-transform">
                 <ShieldCheck size={120} />
               </div>
-              <p className="text-sm uppercase font-bold tracking-widest opacity-80 mb-2">Roczna składka</p>
-              <h3 className="text-5xl font-serif font-bold mb-4">500 NOK</h3>
-              <p className="text-lg font-serif italic text-blue-50">
-                Członkostwo odnawia się automatycznie co 12 miesięcy (subskrypcja), gwarantując ciągłość wsparcia dla stowarzyszenia.
-              </p>
-              <div className="mt-8 pt-8 border-t border-white/20 space-y-2 text-sm opacity-90 italic">
-                <p>❧ Rezygnacja jest możliwa w każdej chwili.</p>
-                <p>❧ Opłata jest przeznaczona w całości na cele statutowe.</p>
+              <div className="space-y-6 relative z-10">
+                <div className="space-y-1">
+                  <p className="text-sm uppercase font-bold tracking-widest opacity-80">Składka roczna</p>
+                  <h3 className="text-5xl md:text-6xl font-serif font-bold">500 NOK</h3>
+                </div>
+                
+                <div className="space-y-4">
+                  <p className="text-xl font-serif font-bold italic border-b border-white/20 pb-4">
+                    Kuźnia Talentów Skandii zyskuje, dzięki Tobie!
+                  </p>
+                  <p className="text-lg font-serif italic text-blue-50">
+                    Za jedyne 500 kr rocznie zyskujesz dostęp do:
+                  </p>
+                  <ul className="space-y-3 font-serif italic text-blue-50">
+                    <li className="flex gap-3"><span>•</span> warsztatów, kursów i zajęć artystycznych,</li>
+                    <li className="flex gap-3"><span>•</span> możliwości rozwoju osobistego i zawodowego,</li>
+                    <li className="flex gap-3"><span>•</span> spotkań z inspirującymi ludźmi,</li>
+                    <li className="flex gap-3"><span>•</span> wyjątkowych wydarzeń dla całej rodziny.</li>
+                  </ul>
+                  <p className="text-sm font-bold bg-white/10 p-4 rounded-2xl border border-white/10 inline-block">
+                    To ogrom możliwości za symboliczną składkę członkowską!
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-10 bg-slate-50 rounded-[4rem] border border-blue-100 space-y-6">
+              <h3 className="text-2xl font-serif font-bold text-slate-900">Dane do płatności</h3>
+              <div className="space-y-4 font-serif italic text-slate-600">
+                <p><span className="font-bold text-slate-900 not-italic">Odbiorca:</span> Skandias Talentsmie</p>
+                <div className="flex items-center gap-4">
+                  <div className="px-4 py-2 bg-[#ff5b24] text-white rounded-xl font-bold not-italic">Vipps: #968883</div>
+                </div>
+                <div className="pt-4 border-t border-blue-100">
+                  <p className="font-bold text-slate-900 not-italic mb-1">Bank: DNB</p>
+                  <p className="text-xl text-slate-900 font-bold not-italic">1520 23 71008</p>
+                </div>
+                <p className="p-4 bg-blue-50 rounded-2xl border border-blue-100 text-sm">
+                  <span className="font-bold text-blue-600 not-italic">Tytuł przelewu:</span><br />
+                  „Składka członkowska – imię i nazwisko”
+                </p>
               </div>
             </div>
           </div>
 
-          <div className="space-y-8 flex-1">
-            <h3 className="text-2xl font-serif font-bold text-slate-900">Instrukcja płatności</h3>
+          <div className="space-y-8 flex-1 w-full">
+            <h3 className="text-3xl font-serif font-bold text-slate-900 flex items-center gap-4">
+               Jak zostać członkiem?
+            </h3>
             <div className="space-y-6">
-              <div className="p-8 bg-slate-50 border border-blue-100 rounded-3xl space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">1</div>
-                  <h4 className="font-bold text-slate-900 uppercase tracking-widest">Vipps - Autopłatność</h4>
+              {[
+                {
+                  step: "1",
+                  title: "Wpłać składkę",
+                  desc: "Wpłać 500 kr na konto lub przez Vipps (#968883).",
+                  details: "Skandias Talentsmie\nBank: DNB\nKonto: 1520 23 71008\nTytuł: „Składka członkowska – imię i nazwisko”"
+                },
+                {
+                  step: "2",
+                  title: "Wyślij potwierdzenie",
+                  desc: "Wyślij nam wiadomość prywatną, e-mail lub SMS z potwierdzeniem przelewu.",
+                  contact: "SMS: +47 948 03 464\nEmail: agder@skandiastalentsmie.no"
+                },
+                {
+                  step: "3",
+                  title: "Gotowe!",
+                  desc: "Otrzymasz od nas potwierdzenie członkostwa oraz dostęp do wszystkich korzyści."
+                }
+              ].map((item, idx) => (
+                <div key={idx} className="p-8 bg-white border border-blue-50 rounded-[3rem] shadow-sm space-y-4 hover:border-blue-200 transition-all">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-blue-600 text-white rounded-2xl flex items-center justify-center font-bold text-xl shadow-lg shadow-blue-900/20">
+                      {item.step}
+                    </div>
+                    <h4 className="text-xl font-serif font-bold text-slate-900">{item.title}</h4>
+                  </div>
+                  <p className="text-slate-600 font-serif italic">{item.desc}</p>
+                  {item.details && (
+                    <pre className="text-xs bg-slate-50 p-4 rounded-2xl font-mono text-slate-700 whitespace-pre-wrap leading-relaxed border border-slate-100">
+                      {item.details}
+                    </pre>
+                  )}
+                  {item.contact && (
+                    <div className="text-sm bg-blue-50 p-4 rounded-2xl font-bold text-blue-600 italic border border-blue-100 whitespace-pre-wrap">
+                      {item.contact}
+                    </div>
+                  )}
                 </div>
-                <p className="text-slate-600 font-serif italic">Najszybsza metoda. Płatność będzie pobierana automatycznie co rok.</p>
-                <a href="#" className="inline-block px-8 py-3 bg-[#ff5b24] text-white rounded-full font-bold shadow-lg hover:scale-105 transition-all">
-                  Aktywuj przez Vipps
-                </a>
-              </div>
+              ))}
+            </div>
 
-              <div className="p-8 bg-slate-50 border border-blue-100 rounded-3xl space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-slate-200 text-slate-600 rounded-full flex items-center justify-center font-bold">2</div>
-                  <h4 className="font-bold text-slate-900 uppercase tracking-widest">Przelew tradycyjny</h4>
-                </div>
-                <p className="text-slate-600 font-serif italic leading-relaxed">
-                  Numer konta: <span className="font-bold not-italic text-slate-900">1234.56.78901</span><br />
-                  Tytuł: „Składka – [Twoje Imię i Nazwisko]”
-                </p>
-              </div>
+            <div className="p-10 bg-slate-900 text-white rounded-[4rem] text-center space-y-6 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.2),transparent)] pointer-events-none"></div>
+              <p className="text-lg font-serif italic leading-relaxed relative z-10">
+                Dołącz już dziś i zapewnij sobie oraz swojej rodzinie dostęp do wszystkiego, co najlepsze w Skandias Talentsmie!
+              </p>
+              <Link to="/kontakt" className="inline-block px-10 py-4 bg-blue-600 text-white rounded-full font-bold text-sm sm:text-base hover:scale-105 transition-all shadow-xl shadow-blue-900/40 relative z-10">
+                Kontakt z nami
+              </Link>
             </div>
           </div>
         </div>

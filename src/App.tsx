@@ -8,6 +8,7 @@ import Projects from './pages/Projects';
 import Membership from './pages/Membership';
 import Contact from './pages/Contact';
 import BranchPage from './pages/BranchPage';
+import Branches from './pages/Branches';
 import GrantsInfo from './pages/GrantsInfo';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="/projekty" element={<Projects />} />
           <Route path="/czlonkostwo" element={<Membership />} />
           <Route path="/kontakt" element={<Contact />} />
+          <Route path="/filie" element={<Branches />} />
           <Route path="/projekty/info" element={<GrantsInfo />} />
           <Route path="/filia/:id" element={<BranchPage />} />
           <Route path="*" element={<Home />} />

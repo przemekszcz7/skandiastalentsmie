@@ -28,9 +28,9 @@ export default function About() {
       {/* Narrative Intro */}
       <section className="space-y-12">
         <header className="space-y-6">
-          <h2 className="text-blue-600 font-bold uppercase tracking-[0.3em] text-[10px]">Opowieść o nas</h2>
+          <h2 className="text-red-700 font-bold uppercase tracking-[0.3em] text-[10px]">Opowieść o nas</h2>
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight leading-tight font-serif text-slate-900">
-            Skandias <span className="text-blue-600">Talentsmie</span> — Kim jesteśmy i dlaczego jesteśmy potrzebni
+            Skandias <span className="text-red-700">Talentsmie</span> — Kim jesteśmy i dlaczego jesteśmy potrzebni
           </h1>
         </header>
         
@@ -42,31 +42,31 @@ export default function About() {
             <p>
               "Tego nie widać w statystykach. Ale to widać w oczach ludzi, którzy po pracy nie mają dokąd pójść, z kim porozmawiać, komu powiedzieć: „jest mi ciężko”."
             </p>
-            <div className="p-10 bg-blue-600 text-white rounded-[3rem] not-italic font-sans shadow-2xl shadow-blue-900/20">
+            <div className="p-10 bg-red-700 text-white rounded-[3rem] not-italic font-sans shadow-2xl shadow-red-900/20">
               <p className="text-2xl font-serif italic font-bold">
                 I właśnie tam — w tej cichej, codziennej samotności — narodziło się Skandias Talentsmie.
               </p>
             </div>
           </div>
-          <div className="space-y-8 bg-white p-12 rounded-[3rem] border border-blue-50 shadow-sm transform rotate-1">
+          <div className="space-y-8 bg-white p-12 rounded-[3rem] border border-red-50 shadow-sm transform rotate-1">
             <p className="text-slate-600 text-lg font-serif">
               Nie z pomysłu „na organizację”. Tylko z potrzeby. Z serca. Z życia.
             </p>
             <ul className="space-y-6 text-sm text-slate-500 font-medium tracking-wide">
               <li className="flex gap-4">
-                <span className="text-blue-600 font-bold">❧</span> Z rozmów z kobietami, które dźwigają wszystko same.
+                <span className="text-red-700 font-bold">❧</span> Z rozmów z kobietami, które dźwigają wszystko same.
               </li>
               <li className="flex gap-4">
-                <span className="text-blue-600 font-bold">❧</span> Z wiadomości od ludzi, którzy nie mają tu rodziny.
+                <span className="text-red-700 font-bold">❧</span> Z wiadomości od ludzi, którzy nie mają tu rodziny.
               </li>
               <li className="flex gap-4">
-                <span className="text-blue-600 font-bold">❧</span> Z seniorów, którzy zostali w Norwegii na dłużej, niż planowali.
+                <span className="text-red-700 font-bold">❧</span> Z seniorów, którzy zostali w Norwegii na dłużej, niż planowali.
               </li>
               <li className="flex gap-4">
-                <span className="text-blue-600 font-bold">❧</span> Z mężczyzn pracujących fizycznie, którym brakuje sensu w ciszy domu.
+                <span className="text-red-700 font-bold">❧</span> Z mężczyzn pracujących fizycznie, którym brakuje sensu w ciszy domu.
               </li>
             </ul>
-            <p className="font-bold text-blue-600 pt-6 border-t border-blue-50 text-xl font-serif italic">
+            <p className="font-bold text-blue-900 pt-6 border-t border-slate-100 text-xl font-serif italic">
               Skandias Talentsmie powstało po to, żeby człowiek przestał być sam.
             </p>
           </div>
@@ -76,7 +76,7 @@ export default function About() {
       {/* Who We Are */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
         <div className="space-y-8">
-          <div className="flex items-center gap-3 text-sky-600 font-bold uppercase tracking-widest text-[10px]">
+          <div className="flex items-center gap-3 text-blue-950 font-bold uppercase tracking-widest text-[10px]">
             <Users size={18} /> Kim jesteśmy
           </div>
           <h2 className="text-4xl font-serif font-bold text-slate-900">Wspólnota Słowian w Agder</h2>
@@ -87,8 +87,8 @@ export default function About() {
             Łączymy ludzi z Polski, Ukrainy, Czech, Słowacji, Bułgarii, Białorusi i krajów bałkańskich. To społeczność ogromna, a jednocześnie często „niewidzialna”.
           </p>
         </div>
-        <div className="space-y-8 bg-white p-12 rounded-[3rem] border border-blue-50">
-          <div className="flex items-center gap-3 text-blue-600 font-bold uppercase tracking-widest text-[10px]">
+        <div className="space-y-8 bg-white p-12 rounded-[3rem] border border-slate-100">
+          <div className="flex items-center gap-3 text-red-700 font-bold uppercase tracking-widest text-[10px]">
             <Target size={18} /> Dla kogo to robimy
           </div>
           <h2 className="text-3xl font-serif font-bold text-slate-900">Dla tych, którzy nie krzyczą o pomoc</h2>
@@ -100,8 +100,8 @@ export default function About() {
               "Osoby po traumie i przymusowej migracji",
               "Młodzież wychowująca się między kulturami"
             ].map((item, idx) => (
-              <div key={idx} className="flex items-center gap-4 p-5 bg-blue-50/50 border border-blue-100 rounded-2xl text-sm font-medium text-slate-700 hover:border-blue-300 transition-colors group">
-                <Heart size={16} className="text-blue-600" /> {item}
+              <div key={idx} className="flex items-center gap-4 p-5 bg-slate-50 border border-slate-100 rounded-2xl text-sm font-medium text-slate-700 hover:border-red-300 transition-colors group">
+                <Heart size={16} className="text-red-700" /> {item}
               </div>
             ))}
           </ul>
@@ -109,10 +109,10 @@ export default function About() {
       </section>
 
       {/* Why it Matters */}
-      <section className="bg-white p-12 md:p-24 rounded-[4rem] border border-blue-50 relative overflow-hidden shadow-sm">
+      <section className="bg-white p-12 md:p-24 rounded-[4rem] border border-slate-100 relative overflow-hidden shadow-sm">
         <div className="max-w-4xl mx-auto space-y-16">
           <div className="text-center space-y-6">
-            <h2 className="text-blue-600 font-bold uppercase tracking-widest text-[10px]">Dlaczego to jest ważne</h2>
+            <h2 className="text-red-700 font-bold uppercase tracking-widest text-[10px]">Dlaczego to jest ważne</h2>
             <h3 className="text-5xl font-serif font-bold text-slate-900">Ręce i serce pracują razem</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
@@ -128,7 +128,7 @@ export default function About() {
               <p className="text-xl text-slate-600 leading-relaxed font-serif">
                 W kulturach słowiańskich rzemiosło to język, który przechodzi ponad barierą słów. Kiedy trzymasz w ręku glinę, igłę lub pędzel — łatwiej zaczynasz mówić.
               </p>
-              <p className="text-2xl font-serif font-bold text-sky-600 italic underline decoration-1 underline-offset-8">A kiedy zaczynasz mówić — przestajesz być sam.</p>
+              <p className="text-2xl font-serif font-bold text-blue-900 italic underline decoration-1 underline-offset-8">A kiedy zaczynasz mówić — przestajesz być sam.</p>
             </div>
           </div>
         </div>
@@ -136,13 +136,13 @@ export default function About() {
 
       {/* Goals */}
       <section className="space-y-12">
-        <div className="flex items-center gap-3 text-sky-600 font-bold uppercase tracking-widest text-xs">
+        <div className="flex items-center gap-3 text-blue-900 font-bold uppercase tracking-widest text-xs">
           <ShieldCheck size={18} /> Nasze cele
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {goals.map((goal, idx) => (
-            <div key={idx} className="p-8 bg-blue-50/10 border border-blue-50 rounded-3xl space-y-4">
-              <span className="w-8 h-8 bg-sky-600 text-white rounded-full flex items-center justify-center font-bold text-xs">{idx + 1}</span>
+            <div key={idx} className="p-8 bg-slate-50 border border-slate-100 rounded-3xl space-y-4">
+              <span className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-xs">{idx + 1}</span>
               <p className="font-bold text-gray-800 leading-snug">{goal}</p>
             </div>
           ))}
@@ -150,16 +150,16 @@ export default function About() {
       </section>
 
       {/* Stats / Effort */}
-      <section className="bg-blue-600 text-white p-12 md:p-24 rounded-[4rem] relative overflow-hidden shadow-2xl shadow-blue-900/20">
+      <section className="bg-blue-950 text-white p-12 md:p-24 rounded-[4rem] relative overflow-hidden shadow-2xl shadow-blue-900/20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-3 px-4 py-1.5 bg-white/20 rounded-full text-xs font-bold uppercase tracking-widest">
+            <div className="inline-flex items-center gap-3 px-4 py-1.5 bg-white/10 rounded-full text-xs font-bold uppercase tracking-widest">
               <Clock size={16} /> Nasz wkład
             </div>
             <h2 className="text-4xl md:text-6xl font-serif font-bold leading-tight italic">
               Nie jesteśmy „organizacją na papierze”. Jesteśmy ruchem ludzi.
             </h2>
-            <p className="text-blue-50 leading-relaxed text-xl italic font-serif">
+            <p className="text-slate-100 leading-relaxed text-xl italic font-serif">
               Przy około 95 aktywnościach rocznie, nasi wolontariusze wkładają ponad 5 700 godzin pracy społecznej. To energia społeczna — największy kapitał regionu.
             </p>
           </div>
@@ -172,7 +172,7 @@ export default function About() {
             ].map((stat, i) => (
               <div key={i} className="flex items-center gap-6 sm:gap-8 group">
                 <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white/10 rounded-2xl flex items-center justify-center text-white border border-white/20 group-hover:scale-110 transition-transform flex-shrink-0">
-                  <stat.icon size={28} />
+                  <stat.icon size={28} className="text-sky-400" />
                 </div>
                 <div className="space-y-2 min-w-0">
                   <p className="text-4xl md:text-5xl font-serif font-bold leading-none">{stat.val}</p>
@@ -187,13 +187,13 @@ export default function About() {
       {/* Society Benefits */}
       <section className="space-y-12">
         <div className="text-center space-y-4">
-          <h2 className="text-blue-600 font-bold uppercase tracking-widest text-[10px]">Wpływ Społeczny</h2>
+          <h2 className="text-red-700 font-bold uppercase tracking-widest text-[10px]">Wpływ Społeczny</h2>
           <h3 className="text-4xl font-serif font-bold text-slate-900">Co region Agder ma z naszych działań?</h3>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {societyBenefits.map((benefit, idx) => (
-            <div key={idx} className="space-y-3 group p-8 bg-white border border-blue-50 rounded-[2.5rem] shadow-sm hover:shadow-md transition-all">
-              <h4 className="text-xl font-serif font-bold text-blue-600 group-hover:translate-x-1 transition-transform duration-300">❦ {benefit.title}</h4>
+            <div key={idx} className="space-y-3 group p-8 bg-white border border-slate-100 rounded-[2.5rem] shadow-sm hover:shadow-md transition-all">
+              <h4 className="text-xl font-serif font-bold text-red-700 group-hover:translate-x-1 transition-transform duration-300">❦ {benefit.title}</h4>
               <p className="text-slate-500 text-sm leading-relaxed font-serif italic">{benefit.desc}</p>
             </div>
           ))}
@@ -206,8 +206,8 @@ export default function About() {
         <p className="text-xl text-slate-600 leading-relaxed font-serif italic">
           Bo Agder — jak cała Norwegia — zmienia się. Coraz więcej ludzi żyje obok siebie, a coraz mniej ze sobą. Coraz więcej ciszy w domach.
         </p>
-        <div className="p-12 bg-white border border-blue-50 rounded-[3rem] shadow-lg shadow-blue-900/5 rotate-1">
-          <p className="text-3xl font-serif font-bold text-sky-600 italic leading-tight">
+        <div className="p-12 bg-white border border-slate-100 rounded-[3rem] shadow-lg shadow-blue-900/5 rotate-1">
+          <p className="text-3xl font-serif font-bold text-blue-900 italic leading-tight">
             "A my robimy coś, co jest dziś bezcenne: przywracamy człowiekowi miejsce przy stole."
           </p>
         </div>
@@ -215,11 +215,11 @@ export default function About() {
 
       {/* Vision & Slavic Countries */}
       <section className="space-y-24">
-        <div className="bg-sky-600 text-white p-16 md:p-24 rounded-[4rem] text-center space-y-8 relative overflow-hidden shadow-2xl shadow-blue-900/10">
+        <div className="bg-blue-950 text-white p-16 md:p-24 rounded-[4rem] text-center space-y-8 relative overflow-hidden shadow-2xl shadow-blue-900/10">
           <Globe className="absolute -top-10 -right-10 opacity-5" size={400} />
           <div className="relative z-10 max-w-3xl mx-auto space-y-8">
             <h2 className="text-4xl font-serif font-bold italic">Nasza Wizja</h2>
-            <p className="text-2xl text-blue-50 leading-relaxed italic font-serif">
+            <p className="text-2xl text-slate-100 leading-relaxed italic font-serif">
                Centrum Sztuki i Integracji Skandias Talentsmie w Songe. Chcemy stworzyć ogólnonorweską sieć miejsc, gdzie kultura i wspólnotą będą ratować przed samotnością.
             </p>
           </div>
@@ -228,12 +228,12 @@ export default function About() {
         <div className="space-y-16">
           <div className="text-center space-y-6">
             <h2 className="text-4xl font-serif font-bold italic text-slate-900">Kraje Słowiańskie w naszej społeczności</h2>
-            <p className="text-sky-600 font-serif italic text-lg">Razem tworzymy wspólnotę, w której każdy talent ma swoje miejsce</p>
+            <p className="text-blue-900 font-serif italic text-lg">Razem tworzymy wspólnotę, w której każdy talent ma swoje miejsce</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {SLAVIC_COUNTRIES.map((group, idx) => (
-              <div key={idx} className="p-10 bg-white border border-blue-50 rounded-[2.5rem] text-center hover:shadow-xl transition-all hover:-translate-y-1">
-                <h3 className="text-blue-600 font-bold text-[10px] uppercase tracking-widest mb-6">Słowianie {group.group}</h3>
+              <div key={idx} className="p-10 bg-white border border-slate-100 rounded-[2.5rem] text-center hover:shadow-xl transition-all hover:-translate-y-1">
+                <h3 className="text-red-700 font-bold text-[10px] uppercase tracking-widest mb-6">Słowianie {group.group}</h3>
                 <p className="text-slate-700 font-serif font-bold text-lg">
                   {group.countries.join(', ')}
                 </p>
@@ -244,8 +244,8 @@ export default function About() {
       </section>
 
       {/* Footer Summary */}
-      <footer className="text-center pt-24 border-t border-blue-50">
-        <p className="text-2xl md:text-4xl font-serif font-bold text-blue-600 italic max-w-4xl mx-auto leading-tight">
+      <footer className="text-center pt-24 border-t border-slate-100">
+        <p className="text-2xl md:text-4xl font-serif font-bold text-red-700 italic max-w-4xl mx-auto leading-tight">
           "Skandias Talentsmie istnieje po to, by talent stał się widoczny, a człowiek przestał być sam — a dzięki temu społeczeństwo staje się zdrowsze."
         </p>
       </footer>

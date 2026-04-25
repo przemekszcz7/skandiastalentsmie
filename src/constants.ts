@@ -6,13 +6,12 @@ export const REGIONS = [
   { id: 'innlandet', name: 'Innlandet', cities: 'Hamar, Lillehammer, Gjøvik' },
   { id: 'more-og-romsdal', name: 'Møre og Romsdal', cities: 'Ålesund, Molde, Kristiansund' },
   { id: 'nordland', name: 'Nordland', cities: 'Bodø, Narvik, Mo i Rana' },
-  { id: 'oslo', name: 'Oslo', cities: 'Oslo, Bærum, Grünerløkka' },
+  { id: 'oslo', name: 'Oslo', cities: 'Oslo' },
   { id: 'rogaland', name: 'Rogaland', cities: 'Stavanger, Sandnes, Haugesund' },
   { id: 'telemark-vestfold', name: 'Telemark + Vestfold', cities: 'Skien, Tønsberg, Porsgrunn' },
   { id: 'troms-finnmark', name: 'Troms + Finnmark', cities: 'Tromsø, Alta, Hammerfest' },
   { id: 'trondelag', name: 'Trøndelag', cities: 'Trondheim, Steinkjer, Stjørdal' },
-  { id: 'vestland', name: 'Vestland', cities: 'Bergen, Førde, Stord' },
-  { id: 'ostfold', name: 'Østfold', cities: 'Fredrikstad, Sarpsborg, Moss' },
+  { id: 'vestland-ostfold', name: 'Vestland + Østfold', cities: 'Bergen, Førde, Stord / Fredrikstad, Sarpsborg, Moss' },
 ];
 
 export const SLAVIC_COUNTRIES = [

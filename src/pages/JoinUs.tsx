@@ -79,6 +79,29 @@ export default function JoinUs() {
         </section>
       </div>
 
+      <motion.section 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="bg-blue-50 p-12 md:p-20 rounded-[4rem] border border-blue-100 text-center space-y-10"
+      >
+        <h2 className="text-3xl md:text-4xl font-serif font-bold text-slate-900">Wystarczy tylko:</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {[
+            { step: "1", text: "Skopiować i wypełnić formularz zgłoszeniowy" },
+            { step: "2", text: "Dokonać wpłaty członkowskiej" },
+            { step: "3", text: "I gotowe!" }
+          ].map((item, i) => (
+            <div key={i} className="flex flex-col items-center gap-4 group">
+              <div className="w-12 h-12 bg-white text-blue-600 rounded-2xl flex items-center justify-center font-bold text-xl shadow-sm border border-blue-100 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                {item.step}
+              </div>
+              <p className="text-lg font-serif font-bold italic text-slate-700">{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </motion.section>
+
       <div className="bg-blue-600 text-white p-16 md:p-24 rounded-[5rem] text-center space-y-12 shadow-2xl shadow-blue-900/20 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none -rotate-12 scale-150">
            <Heart size={400} className="mx-auto" />
