@@ -22,43 +22,43 @@ export const SLAVIC_COUNTRIES = [
 
 export const CATEGORIES = [
   {
-    title: 'Rękodzieło i sztuka',
-    items: ['Malowanie obrazów (oleje, akwarele, akryle)', 'Gobeliny, haft, ikony i sztuka sakralna', 'Rysunek, maski, dekoracje teatralne'],
+    titleKey: 'join.cat.art.title',
+    itemsKey: 'join.cat.art.items',
     icon: 'Palette'
   },
   {
-    title: 'Dekoracje i ozdoby',
-    items: ['Wianki, łapacze snów, figurki i rzeźby', 'Bukiety kwiatowe, świece, ozdoby świąteczne', 'Makrama i plecionki'],
+    titleKey: 'join.cat.decor.title',
+    itemsKey: 'join.cat.decor.items',
     icon: 'Sparkles'
   },
   {
-    title: 'Biżuteria i akcesoria',
-    items: ['Naszyjniki, pierścionki, broszki', 'Spinki, opaski, torebki handmade'],
+    titleKey: 'join.cat.jewelry.title',
+    itemsKey: 'join.cat.jewelry.items',
     icon: 'Gem'
   },
   {
-    title: 'Tekstylia i szycie',
-    items: ['Ubrania, szaliki, rękawiczki', 'Haft, szydełko, patchwork', 'Stroje historyczne, maskotki'],
+    titleKey: 'join.cat.textiles.title',
+    itemsKey: 'join.cat.textiles.items',
     icon: 'Scissors'
   },
   {
-    title: 'Domowe wyroby',
-    items: ['Torty, pieczywo, czekoladki', 'Wędliny, sery, nalewki', 'Przetwory i kiszonki'],
+    titleKey: 'join.cat.home.title',
+    itemsKey: 'join.cat.home.items',
     icon: 'Utensils'
   },
   {
-    title: 'Produkty naturalne',
-    items: ['Mydła, kosmetyki, olejki', 'Kule do kąpieli, perfumy'],
+    titleKey: 'join.cat.natural.title',
+    itemsKey: 'join.cat.natural.items',
     icon: 'Leaf'
   },
   {
-    title: 'Rzemiosło użytkowe',
-    items: ['Meble, dekoracje z drewna', 'Kosze wiklinowe, kowalstwo'],
+    titleKey: 'join.cat.craft.title',
+    itemsKey: 'join.cat.craft.items',
     icon: 'Hammer'
   },
   {
-    title: 'Sztuka cyfrowa i foto',
-    items: ['Fotografia artystyczna i portretowa', 'Filmy, animacje, kaligrafia'],
+    titleKey: 'join.cat.digital.title',
+    itemsKey: 'join.cat.digital.items',
     icon: 'Camera'
   }
 ];

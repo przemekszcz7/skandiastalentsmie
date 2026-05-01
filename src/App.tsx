@@ -12,6 +12,7 @@ import Branches from './pages/Branches';
 import GrantsInfo from './pages/GrantsInfo';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { LanguageProvider } from './contexts/LanguageContext';
 
 function ScrollToTopComponent() {
   const { pathname } = useLocation();
@@ -24,22 +25,24 @@ function ScrollToTopComponent() {
 export default function App() {
   return (
     <Router>
-      <ScrollToTopComponent />
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/o-nas" element={<About />} />
-          <Route path="/dolacz" element={<JoinUs />} />
-          <Route path="/wydarzenia" element={<Events />} />
-          <Route path="/projekty" element={<Projects />} />
-          <Route path="/czlonkostwo" element={<Membership />} />
-          <Route path="/kontakt" element={<Contact />} />
-          <Route path="/filie" element={<Branches />} />
-          <Route path="/projekty/info" element={<GrantsInfo />} />
-          <Route path="/filia/:id" element={<BranchPage />} />
-          <Route path="*" element={<Home />} />
-        </Routes>
-      </Layout>
+      <LanguageProvider>
+        <ScrollToTopComponent />
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/o-nas" element={<About />} />
+            <Route path="/dolacz" element={<JoinUs />} />
+            <Route path="/wydarzenia" element={<Events />} />
+            <Route path="/projekty" element={<Projects />} />
+            <Route path="/czlonkostwo" element={<Membership />} />
+            <Route path="/kontakt" element={<Contact />} />
+            <Route path="/filie" element={<Branches />} />
+            <Route path="/projekty/info" element={<GrantsInfo />} />
+            <Route path="/filia/:id" element={<BranchPage />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </Layout>
+      </LanguageProvider>
     </Router>
   );
 }

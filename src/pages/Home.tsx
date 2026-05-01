@@ -1,14 +1,16 @@
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { ArrowRight, Sparkles, Star, Users, Palette, Heart, Facebook } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Home() {
+  const { t } = useLanguage();
   const news = [
-    { title: 'Pierwsza filia Agder już działa!', date: '24.04.2026', tag: 'Ważne' },
-    { title: 'Warsztaty makramy w Oslo - zapisy otwarte', date: '21.04.2026', tag: 'Warsztaty' },
-    { title: 'Nowy projekt "Słowiańska Kuźnia" 13x13', date: '15.04.2026', tag: 'Projekt' },
+    { title: t('home.news.item1.title'), date: '24.04.2026', tag: t('home.news.item1.tag') },
+    { title: t('home.news.item2.title'), date: '21.04.2026', tag: t('home.news.item2.tag') },
+    { title: t('home.news.item3.title'), date: '15.04.2026', tag: t('home.news.item3.tag') },
   ];
 
   return (
@@ -23,7 +25,7 @@ export default function Home() {
         >
           <div className="w-32 h-32 md:w-48 md:h-48 overflow-hidden rounded-full mx-auto mb-12 shadow-2xl shadow-blue-900/10 rotate-2 border-8 border-white p-2 bg-white">
             <img 
-              src="https://scontent-waw2-1.xx.fbcdn.net/v/t39.30808-6/548704032_122138545526877648_1011106039652050687_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=53a332&_nc_ohc=NXNvAVA8bOYQ7kNvwENWPvP&_nc_oc=AdquXYmPysc0xlvpepiuJhe4w8OTI7z6WE3kt8lH8oS6VcKJNbBU91o-v2iKiiVOdOw&_nc_zt=23&_nc_ht=scontent-waw2-1.xx&_nc_gid=-EqqRg3rpBNwcsY51Yk7mw&_nc_ss=7b2a8&oh=00_Af2nnGJF2uXJRPdL6X01AIurwWX6V2R8urd2uBlJtaskiA&oe=69F27558" 
+              src="https://i.ibb.co/HD7kNWNg/logo.png" 
               alt="Skandias Talentsmie Logo" 
               className="w-full h-full object-cover rounded-full"
               referrerPolicy="no-referrer"
@@ -45,7 +47,7 @@ export default function Home() {
             transition={{ delay: 0.1 }}
             className="text-2xl md:text-3xl text-blue-900 font-serif italic"
           >
-            Skandii kuźnia talentów
+            {t('home.subtitle')}
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -54,7 +56,7 @@ export default function Home() {
             className="bg-white/40 backdrop-blur-sm p-10 rounded-[3rem] border border-red-50 mt-12 max-w-4xl mx-auto shadow-sm"
           >
             <p className="text-xl text-slate-700 leading-relaxed font-serif italic">
-              „Stowarzyszenie, które łączy kreatywne dusze i twórcze ręce w Norwegii. Promujemy talenty, wspieramy rękodzielników, artystów i pasjonatów. Jeśli tworzysz – pokaż to światu razem z nami!”
+              {t('home.quote')}
             </p>
           </motion.div>
         </div>
@@ -70,13 +72,13 @@ export default function Home() {
               to="/dolacz" 
               className="w-full sm:w-auto bg-red-600 text-white px-8 sm:px-12 py-5 rounded-full font-bold text-base sm:text-lg shadow-xl shadow-red-900/20 hover:scale-105 transition-all flex items-center justify-center gap-3"
             >
-              Dołącz do nas <ArrowRight size={20} />
+              {t('nav.join')} <ArrowRight size={20} />
             </Link>
             <Link 
               to="/o-nas" 
               className="w-full sm:w-auto bg-white text-blue-900 border border-blue-100 px-8 sm:px-12 py-5 rounded-full font-bold text-base sm:text-lg hover:bg-blue-50 transition-all shadow-sm flex items-center justify-center"
             >
-              Odkryj naszą misję
+              {t('home.missionBtn')}
             </Link>
           </div>
 
@@ -87,7 +89,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 bg-[#1877F2] text-white rounded-full font-bold shadow-lg hover:scale-105 transition-all"
             >
-              <Facebook size={20} /> Grupa na Facebooku
+              <Facebook size={20} /> {t('home.fbGroup')}
             </a>
             <a 
               href="https://www.facebook.com/SkandiiKuzniaTalentow" 
@@ -95,7 +97,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#1877F2] border border-[#1877F2]/20 rounded-full font-bold shadow-sm hover:scale-105 transition-all"
             >
-              <Facebook size={20} /> Śledź nas na FB
+              <Facebook size={20} /> {t('home.fbFollow')}
             </a>
           </div>
         </motion.div>
@@ -109,9 +111,9 @@ export default function Home() {
       {/* Feature Section */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {[
-          { icon: <Heart className="text-red-600" />, title: 'Pasja', desc: 'Wierzymy, że każdy ma w sobie iskrę twórczości. Każde dzieło to osobna historia.' },
-          { icon: <Users className="text-blue-900" />, title: 'Wspólnota', desc: 'Razem budujemy życie społeczne w Norwegii. Silni więziami, połączeni kulturą.' },
-          { icon: <Star className="text-green-500" />, title: 'Rozwój', desc: 'Wspieramy pasjonatów w budowaniu rozpoznawalności i szlifowaniu talentu.' },
+          { icon: <Heart className="text-red-600" />, title: t('home.features.passion.title'), desc: t('home.features.passion.desc') },
+          { icon: <Users className="text-blue-900" />, title: t('home.features.community.title'), desc: t('home.features.community.desc') },
+          { icon: <Star className="text-green-500" />, title: t('home.features.growth.title'), desc: t('home.features.growth.desc') },
         ].map((item, idx) => (
           <motion.div 
             key={idx}
@@ -130,9 +132,9 @@ export default function Home() {
         <div className="flex items-center justify-between px-4">
           <h2 className="text-4xl font-serif font-bold flex items-center gap-4">
             <span className="w-2 h-10 bg-red-600 rounded-full inline-block"></span>
-            Aktualności
+            {t('home.news.title')}
           </h2>
-          <Link to="/wydarzenia" className="text-xs font-bold uppercase tracking-[0.2em] text-blue-900 hover:underline decoration-2 underline-offset-8">Więcej aktualności</Link>
+          <Link to="/wydarzenia" className="text-xs font-bold uppercase tracking-[0.2em] text-blue-900 hover:underline decoration-2 underline-offset-8">{t('home.news.more')}</Link>
         </div>
         <div className="grid grid-cols-1 gap-6">
           {news.map((item, idx) => (
@@ -164,10 +166,10 @@ export default function Home() {
         </div>
         <div className="relative z-10 space-y-10 max-w-4xl mx-auto">
           <p className="text-3xl md:text-5xl font-serif italic leading-tight">
-            "Kultura to nie tylko piękne przedmioty, to przede wszystkim więzi, które tworzymy, pracując ramie w ramie."
+            {t('home.vision')}
           </p>
           <div className="flex justify-center gap-6 pt-4">
-             <Link to="/dolacz" className="px-12 py-4 bg-red-600 text-white rounded-full font-bold hover:scale-105 transition-all shadow-lg shadow-red-900/20">Dołącz do wspólnoty</Link>
+             <Link to="/dolacz" className="px-12 py-4 bg-red-600 text-white rounded-full font-bold hover:scale-105 transition-all shadow-lg shadow-red-900/20">{t('home.joinCommunity')}</Link>
           </div>
         </div>
       </section>
@@ -175,8 +177,8 @@ export default function Home() {
       {/* Branches Section */}
       <section className="space-y-12">
         <div className="text-center space-y-4">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900">Nasze oddziały <span className="text-red-700 whitespace-nowrap">w całej Norwegii</span></h2>
-          <p className="text-xl text-blue-900 font-serif italic">12 filii regionalnych Skandias Talentsmie</p>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900">{t('home.branches.title')} <span className="text-red-700 whitespace-nowrap">{t('home.branches.norway')}</span></h2>
+          <p className="text-xl text-blue-900 font-serif italic">{t('home.branches.subtitle')}</p>
         </div>
         
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -195,7 +197,7 @@ export default function Home() {
             to="/filie" 
             className="inline-flex items-center gap-3 text-red-700 font-bold uppercase tracking-widest text-sm hover:underline decoration-2 underline-offset-8"
           >
-            Zobacz szczegóły oddziałów <ArrowRight size={16} />
+            {t('home.branches.more')} <ArrowRight size={16} />
           </Link>
         </div>
       </section>

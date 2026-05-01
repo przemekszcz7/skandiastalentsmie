@@ -13,11 +13,15 @@ import {
   Gem,
   Award,
   ArrowLeft,
-  Banknote
+  Banknote,
+  Mail
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const GrantsInfo: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <motion.div 
       initial={{ opacity: 0 }} 
@@ -26,13 +30,13 @@ const GrantsInfo: React.FC = () => {
     >
       <header className="space-y-8">
         <Link to="/projekty" className="inline-flex items-center gap-2 text-blue-600 font-bold hover:gap-3 transition-all group">
-          <ArrowLeft size={20} /> <span className="group-hover:underline underline-offset-4">Powrót do projektów</span>
+          <ArrowLeft size={20} /> <span className="group-hover:underline underline-offset-4">{t('grants.back')}</span>
         </Link>
         <h1 className="text-5xl md:text-7xl font-serif font-bold tracking-tight text-slate-900 leading-tight">
-          Granty i <span className="text-blue-600">wsparcie</span>
+          {t('grants.title').split(' ')[0]} <span className="text-blue-600">{t('grants.title').split(' ').slice(1).join(' ')}</span>
         </h1>
         <p className="text-2xl text-sky-600 leading-relaxed font-serif italic">
-          Szczegółowe informacje o celach, lokalizacji i wpływie społecznym Skandias Talentsmie.
+          {t('grants.subtitle')}
         </p>
       </header>
 
@@ -45,17 +49,17 @@ const GrantsInfo: React.FC = () => {
           <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 border border-blue-100">
             <MapPin size={32} />
           </div>
-          <h2 className="text-3xl font-serif font-bold text-slate-900">Geografia i lokalizacja</h2>
+          <h2 className="text-3xl font-serif font-bold text-slate-900">{t('grants.geo.title')}</h2>
         </div>
         <div className="space-y-6 text-slate-600 font-serif italic text-lg leading-relaxed">
           <p>
-            Stowarzyszenie Skandias Talentsmie jest formalnie zarejestrowane w <span className="text-slate-900 font-bold not-italic">Grimstad</span>, czyli w regionie Agder, a od dnia 16 października 2025 roku przejmie nową, stałą siedzibę w <span className="text-slate-900 font-bold not-italic">Songe (Sliperikleiva 2, gmina Tvedestrand, Agder)</span>.
+            {t('grants.geo.desc1')}
           </p>
           <p>
-            Dzięki temu projekt będzie realizowany w pełni na obszarze objętym programem – <span className="text-slate-900 font-bold not-italic">Agder i Telemark</span>. Nasza lokalizacja spełnia więc wszystkie wymagania geograficzne i zapewnia, że działania będą dostępne zarówno dla mieszkańców Agder, jak i dla społeczności z sąsiedniego regionu Telemark.
+            {t('grants.geo.desc2')}
           </p>
           <p className="p-8 bg-blue-50 rounded-3xl border border-blue-100 italic">
-            "Posiadanie własnej nieruchomości w Songe daje nam gwarancję trwałości i ciągłości działań, a jednocześnie mocno osadza projekt w lokalnej społeczności regionu Agder."
+            {t('grants.geo.quote')}
           </p>
         </div>
       </section>
@@ -66,29 +70,29 @@ const GrantsInfo: React.FC = () => {
           <div className="w-16 h-16 bg-sky-50 rounded-2xl flex items-center justify-center text-sky-600 border border-sky-100">
             <ShieldCheck size={32} />
           </div>
-          <h2 className="text-3xl font-serif font-bold text-slate-900">Spełnienie kryteriów formalnych</h2>
+          <h2 className="text-3xl font-serif font-bold text-slate-900">{t('grants.formal.title')}</h2>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-white p-10 rounded-[3rem] border border-blue-50 shadow-sm space-y-6">
             <h3 className="text-xl font-bold text-slate-900 uppercase tracking-widest flex items-center gap-3">
-              <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm">1</span> Status prawny
+              <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm">1</span> {t('grants.formal.status.title')}
             </h3>
             <ul className="space-y-4 text-slate-600 font-serif italic">
-              <li className="flex gap-3"><span>❧</span> Jesteśmy stowarzyszeniem (forening) zarejestrowanym w Brønnøysundregistrene – Enhetsregisteret.</li>
-              <li className="flex gap-3"><span>❧</span> Posiadamy własny numer organizacyjny i działamy zgodnie z Frivillighetsregisterloven.</li>
-              <li className="flex gap-3"><span>❧</span> Jesteśmy organizacją non-profit – całość środków jest przeznaczana na cele statutowe.</li>
+              <li className="flex gap-3"><span>❧</span> {t('grants.formal.status.list1')}</li>
+              <li className="flex gap-3"><span>❧</span> {t('grants.formal.status.list2')}</li>
+              <li className="flex gap-3"><span>❧</span> {t('grants.formal.status.list3')}</li>
             </ul>
           </div>
 
           <div className="bg-white p-10 rounded-[3rem] border border-blue-50 shadow-sm space-y-6">
             <h3 className="text-xl font-bold text-slate-900 uppercase tracking-widest flex items-center gap-3">
-              <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm">2</span> Unikalny wkład
+              <span className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-sm">2</span> {t('grants.formal.contribution.title')}
             </h3>
             <ul className="space-y-4 text-slate-600 font-serif italic">
-              <li className="flex gap-3"><span>❧</span> Brak powielania zadań sektora publicznego (nie zastępujemy szkół ani NAV).</li>
-              <li className="flex gap-3"><span>❧</span> Oferujemy aktywności kulturalne i integracyjne, które są dobrowolne i dodatkowe.</li>
-              <li className="flex gap-3"><span>❧</span> Tworzymy sieć synergii między organizacjami w regionie.</li>
+              <li className="flex gap-3"><span>❧</span> {t('grants.formal.contribution.list1')}</li>
+              <li className="flex gap-3"><span>❧</span> {t('grants.formal.contribution.list2')}</li>
+              <li className="flex gap-3"><span>❧</span> {t('grants.formal.contribution.list3')}</li>
             </ul>
           </div>
         </div>
@@ -100,26 +104,26 @@ const GrantsInfo: React.FC = () => {
           <Heart size={400} className="mx-auto translate-y-1/4" />
         </div>
         <div className="max-w-3xl space-y-8 relative z-10">
-          <h2 className="text-4xl md:text-6xl font-serif font-bold italic">Serce projektu: Wolontariusze</h2>
+          <h2 className="text-4xl md:text-6xl font-serif font-bold italic">{t('grants.volunteers.title')}</h2>
           <p className="text-xl text-blue-50 leading-relaxed font-serif italic">
-            Bez wolontariuszy Skandias Talentsmie nie miałoby sensu. To oni malują pierwsze dekoracje, szykują sale, uczą innych, dzielą się swoją wiedzą i czasem.
+            {t('grants.volunteers.desc')}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-8">
             <div className="p-8 bg-white/10 rounded-3xl border border-white/20">
-              <h4 className="font-bold text-white mb-2 uppercase tracking-widest text-xs">Fundusz Godzin i Dojazdów</h4>
-              <p className="text-blue-50 text-sm italic font-serif">Zwroty kosztów, by nikt nie musiał dopłacać z własnej kieszeni.</p>
+              <h4 className="font-bold text-white mb-2 uppercase tracking-widest text-xs">{t('grants.volunteers.fund.title')}</h4>
+              <p className="text-blue-50 text-sm italic font-serif">{t('grants.volunteers.fund.desc')}</p>
             </div>
             <div className="p-8 bg-white/10 rounded-3xl border border-white/20">
-              <h4 className="font-bold text-white mb-2 uppercase tracking-widest text-xs">Akademia Wolontariatu</h4>
-              <p className="text-blue-50 text-sm italic font-serif">Szkolenia, certyfikacja i nowe kompetencje na lata.</p>
+              <h4 className="font-bold text-white mb-2 uppercase tracking-widest text-xs">{t('grants.volunteers.academy.title')}</h4>
+              <p className="text-blue-50 text-sm italic font-serif">{t('grants.volunteers.academy.desc')}</p>
             </div>
             <div className="p-8 bg-white/10 rounded-3xl border border-white/20">
-              <h4 className="font-bold text-white mb-2 uppercase tracking-widest text-xs">Wyposażenie pracowni</h4>
-              <p className="text-blue-50 text-sm italic font-serif">Profesjonalne narzędzia i bezpieczne stanowiska pracy.</p>
+              <h4 className="font-bold text-white mb-2 uppercase tracking-widest text-xs">{t('grants.volunteers.workshop.title')}</h4>
+              <p className="text-blue-50 text-sm italic font-serif">{t('grants.volunteers.workshop.desc')}</p>
             </div>
             <div className="p-8 bg-white/10 rounded-3xl border border-white/20">
-              <h4 className="font-bold text-white mb-2 uppercase tracking-widest text-xs">Koordynacja i opieka</h4>
-              <p className="text-blue-50 text-sm italic font-serif">Spójny system wsparcia, by nikt nie "zginął w tłumie".</p>
+              <h4 className="font-bold text-white mb-2 uppercase tracking-widest text-xs">{t('grants.volunteers.coordination.title')}</h4>
+              <p className="text-blue-50 text-sm italic font-serif">{t('grants.volunteers.coordination.desc')}</p>
             </div>
           </div>
         </div>
@@ -132,20 +136,20 @@ const GrantsInfo: React.FC = () => {
             <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 border border-blue-100">
               <Gem size={32} />
             </div>
-            <h2 className="text-3xl font-serif font-bold text-slate-900">Realna baza i stabilność</h2>
+            <h2 className="text-3xl font-serif font-bold text-slate-900">{t('grants.assets.title')}</h2>
           </div>
           <div className="space-y-6 text-slate-600 font-serif italic text-lg leading-relaxed">
             <p>
-              Zakupiliśmy nieruchomość w Songe ze środków własnych członków. To inwestycja, która pokazuje naszą wiarę w długofalowy rozwój.
+              {t('grants.assets.desc')}
             </p>
             <ul className="space-y-4">
               <li className="flex gap-4 p-6 bg-white rounded-3xl border border-blue-50 shadow-sm">
                 <div className="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0 font-bold">A</div>
-                <p>Nowy budynek z 2009 roku (dawne przedszkole) – centrum warsztatowe.</p>
+                <p>{t('grants.assets.a')}</p>
               </li>
               <li className="flex gap-4 p-6 bg-white rounded-3xl border border-blue-50 shadow-sm">
                 <div className="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0 font-bold">B</div>
-                <p>Stary dom z 1900 roku – przestrzeń inspiracji łącząca tradycję z nowoczesnością.</p>
+                <p>{t('grants.assets.b')}</p>
               </li>
             </ul>
           </div>
@@ -156,25 +160,25 @@ const GrantsInfo: React.FC = () => {
             <div className="w-16 h-16 bg-sky-50 rounded-2xl flex items-center justify-center text-sky-600 border border-sky-100">
               <Zap size={32} />
             </div>
-            <h2 className="text-3xl font-serif font-bold text-slate-900">Co już robimy?</h2>
+            <h2 className="text-3xl font-serif font-bold text-slate-900">{t('grants.action.title')}</h2>
           </div>
           <div className="space-y-8">
             <div className="p-10 bg-white border border-blue-50 rounded-[3rem] shadow-sm relative overflow-hidden group hover:border-blue-200 transition-all">
               <div className="absolute top-0 right-0 p-6 text-blue-100 opacity-20 group-hover:opacity-40 transition-opacity">
                 <Calendar size={80} />
               </div>
-              <h4 className="text-xl font-serif font-bold italic text-slate-900 mb-4">Jarmark Bożonarodzeniowy</h4>
+              <h4 className="text-xl font-serif font-bold italic text-slate-900 mb-4">{t('grants.action.jarmark.title')}</h4>
               <p className="text-slate-600 font-serif italic leading-relaxed">
-                Wydarzenie w filii Landvik Skomle z ogromnym zainteresowaniem lokalnej społeczności.
+                {t('grants.action.jarmark.desc')}
               </p>
             </div>
             <div className="p-10 bg-white border border-blue-50 rounded-[3rem] shadow-sm relative overflow-hidden group hover:border-blue-200 transition-all">
               <div className="absolute top-0 right-0 p-6 text-blue-100 opacity-20 group-hover:opacity-40 transition-opacity">
                 <Users size={80} />
               </div>
-              <h4 className="text-xl font-serif font-bold italic text-slate-900 mb-4">Współpraca instytucjonalna</h4>
+              <h4 className="text-xl font-serif font-bold italic text-slate-900 mb-4">{t('grants.action.collab.title')}</h4>
               <p className="text-slate-600 font-serif italic leading-relaxed">
-                Regularnie współpracujemy z instytucjami publicznymi, budując sieć partnerstw.
+                {t('grants.action.collab.desc')}
               </p>
             </div>
           </div>
@@ -184,46 +188,46 @@ const GrantsInfo: React.FC = () => {
       {/* Section 5: Goals & Numbers */}
       <section className="bg-slate-50 p-8 sm:p-12 md:p-20 rounded-[5rem] border border-blue-100 space-y-16">
         <div className="text-center space-y-4 max-w-2xl mx-auto">
-          <h2 className="text-4xl font-serif font-bold text-slate-900">Mierzalne rezultaty (Rok 1)</h2>
-          <p className="text-sky-600 font-serif italic text-lg">Nasze cele na najbliższy czas są konkretne i ambitne.</p>
+          <h2 className="text-4xl font-serif font-bold text-slate-900">{t('grants.results.title')}</h2>
+          <p className="text-sky-600 font-serif italic text-lg">{t('grants.results.subtitle')}</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="text-center space-y-2 p-6 bg-white/40 rounded-3xl border border-blue-50 break-words">
             <span className="text-4xl md:text-5xl font-serif font-bold text-blue-600 block">500+</span>
-            <p className="text-[10px] uppercase font-bold text-slate-500 tracking-widest leading-relaxed">Uczestników warsztatów</p>
+            <p className="text-[10px] uppercase font-bold text-slate-500 tracking-widest leading-relaxed">{t('grants.results.participants')}</p>
           </div>
           <div className="text-center space-y-2 p-6 bg-white/40 rounded-3xl border border-blue-50 break-words">
             <span className="text-4xl md:text-5xl font-serif font-bold text-blue-600 block">100+</span>
-            <p className="text-[10px] uppercase font-bold text-slate-500 tracking-widest leading-relaxed">Wystawionych prac</p>
+            <p className="text-[10px] uppercase font-bold text-slate-500 tracking-widest leading-relaxed">{t('grants.results.works')}</p>
           </div>
           <div className="text-center space-y-2 p-6 bg-white/40 rounded-3xl border border-blue-50 break-words">
             <span className="text-4xl md:text-5xl font-serif font-bold text-blue-600 block">60%</span>
-            <p className="text-[10px] uppercase font-bold text-slate-500 tracking-widest leading-relaxed">Wzrost dobrostanu</p>
+            <p className="text-[10px] uppercase font-bold text-slate-500 tracking-widest leading-relaxed">{t('grants.results.wellbeing')}</p>
           </div>
           <div className="text-center space-y-2 p-6 bg-white/40 rounded-3xl border border-blue-50 break-words">
             <span className="text-4xl md:text-5xl font-serif font-bold text-blue-600 block">20+</span>
-            <p className="text-[10px] uppercase font-bold text-slate-500 tracking-widest leading-relaxed">Partnerstw lokalnych</p>
+            <p className="text-[10px] uppercase font-bold text-slate-500 tracking-widest leading-relaxed">{t('grants.results.partnerships')}</p>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-10">
           <div className="space-y-6">
-            <h3 className="text-2xl font-serif font-bold italic text-slate-900 underline decoration-blue-200 underline-offset-8">Co umożliwiamy?</h3>
+            <h3 className="text-2xl font-serif font-bold italic text-slate-900 underline decoration-blue-200 underline-offset-8">{t('grants.enable.title')}</h3>
             <ul className="space-y-4 text-slate-600 font-serif italic text-lg leading-snug">
-              <li className="flex gap-4"><span>❧</span> Scena i widoczność dla twórców (wystawy, jarmarki).</li>
-              <li className="flex gap-4"><span>❧</span> Kompetencje twórcze i „okołozawodowe” (wycena, marketing).</li>
-              <li className="flex gap-4"><span>❧</span> Most pokoleń: seniorzy jako mistrzowie tradycji.</li>
-              <li className="flex gap-4"><span>❧</span> „Norweski w ruchu”: nauka języka przy rzemiośle.</li>
+              <li className="flex gap-4"><span>❧</span> {t('grants.enable.list1')}</li>
+              <li className="flex gap-4"><span>❧</span> {t('grants.enable.list2')}</li>
+              <li className="flex gap-4"><span>❧</span> {t('grants.enable.list3')}</li>
+              <li className="flex gap-4"><span>❧</span> {t('grants.enable.list4')}</li>
             </ul>
           </div>
           <div className="space-y-6">
-            <h3 className="text-2xl font-serif font-bold italic text-slate-900 underline decoration-blue-200 underline-offset-8">Dlaczego my?</h3>
+            <h3 className="text-2xl font-serif font-bold italic text-slate-900 underline decoration-blue-200 underline-offset-8">{t('grants.why.title')}</h3>
             <ul className="space-y-4 text-slate-600 font-serif italic text-lg leading-snug">
-              <li className="flex gap-4"><span>❧</span> Federacyjność: model Agder to pilotaż dla całej Norwegii.</li>
-              <li className="flex gap-4"><span>❧</span> Etyka i ekologia: recykling i naprawa.</li>
-              <li className="flex gap-4"><span>❧</span> Godność twórcy: uświadamianie wartości pracy rąk.</li>
-              <li className="flex gap-4"><span>❧</span> Trwałość: własna siedziba gwarantuje ciągłość.</li>
+              <li className="flex gap-4"><span>❧</span> {t('grants.why.list1')}</li>
+              <li className="flex gap-4"><span>❧</span> {t('grants.why.list2')}</li>
+              <li className="flex gap-4"><span>❧</span> {t('grants.why.list3')}</li>
+              <li className="flex gap-4"><span>❧</span> {t('grants.why.list4')}</li>
             </ul>
           </div>
         </div>
@@ -235,42 +239,42 @@ const GrantsInfo: React.FC = () => {
           <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 border border-blue-100">
             <Award size={32} />
           </div>
-          <h2 className="text-3xl font-serif font-bold text-slate-900">Budżet i finansowanie (3 lata)</h2>
+          <h2 className="text-3xl font-serif font-bold text-slate-900">{t('grants.budget.title')}</h2>
         </div>
         
         <div className="space-y-8">
           <p className="text-xl text-slate-600 font-serif italic leading-relaxed">
-            Całkowity budżet projektu wynosi <span className="text-slate-900 font-bold not-italic">750.000 NOK</span>. Każda korona jest inwestycją w trwały mechanizm zmiany społecznej.
+            {t('grants.budget.desc')}
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-slate-50 p-6 sm:p-8 rounded-[2.5rem] border border-blue-50 space-y-4 flex flex-col min-h-0 break-words">
-              <h4 className="text-sm uppercase font-bold text-slate-400 tracking-widest flex-shrink-0">Adaptacja przestrzeni</h4>
+              <h4 className="text-sm uppercase font-bold text-slate-400 tracking-widest flex-shrink-0">{t('grants.budget.item1.title')}</h4>
               <p className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 flex-shrink-0">300.000 NOK</p>
-              <p className="text-xs text-slate-500 font-serif italic leading-relaxed">Remont sali głównej, wyposażenie pracowni, kuchni i altan w ogrodzie.</p>
+              <p className="text-xs text-slate-500 font-serif italic leading-relaxed">{t('grants.budget.item1.desc')}</p>
             </div>
             <div className="bg-slate-50 p-6 sm:p-8 rounded-[2.5rem] border border-blue-50 space-y-4 flex flex-col min-h-0 break-words">
-              <h4 className="text-sm uppercase font-bold text-slate-400 tracking-widest flex-shrink-0">Program Wolontariatu</h4>
+              <h4 className="text-sm uppercase font-bold text-slate-400 tracking-widest flex-shrink-0">{t('grants.budget.item2.title')}</h4>
               <p className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 flex-shrink-0">300.000 NOK</p>
-              <p className="text-xs text-slate-500 font-serif italic leading-relaxed">Fundusz dojazdów, Akademia Wolontariatu, ubezpieczenia i koordynacja.</p>
+              <p className="text-xs text-slate-500 font-serif italic leading-relaxed">{t('grants.budget.item2.desc')}</p>
             </div>
             <div className="bg-slate-50 p-6 sm:p-8 rounded-[2.5rem] border border-blue-50 space-y-4 flex flex-col min-h-0 break-words">
-              <h4 className="text-sm uppercase font-bold text-slate-400 tracking-widest flex-shrink-0">Program kulturalny</h4>
+              <h4 className="text-sm uppercase font-bold text-slate-400 tracking-widest flex-shrink-0">{t('grants.budget.item3.title')}</h4>
               <p className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 flex-shrink-0">150.000 NOK</p>
-              <p className="text-xs text-slate-500 font-serif italic leading-relaxed">Organizacja jarmarków (2/rok) oraz cyklu warsztatów i wystaw.</p>
+              <p className="text-xs text-slate-500 font-serif italic leading-relaxed">{t('grants.budget.item3.desc')}</p>
             </div>
           </div>
         </div>
 
         <div className="pt-10 border-t border-dashed border-blue-100 flex flex-col md:flex-row justify-between items-center gap-8">
           <p className="text-slate-400 font-serif italic text-sm text-center md:text-left">
-            "Inwestując w wolontariuszy, inwestujecie w trwały system zmiany. Każda godzina wsparcia zamienia się w godziny nauki i dobra wspólnego."
+            {t('grants.budget.quote')}
           </p>
           <a 
             href="#oplaty" 
             className="w-full sm:w-auto px-10 py-4 bg-blue-600 text-white rounded-full font-bold shadow-xl shadow-blue-900/20 hover:scale-105 transition-all text-center"
           >
-            Wesprzyj naszą misję
+            {t('grants.support.btn')}
           </a>
         </div>
       </section>
@@ -280,7 +284,7 @@ const GrantsInfo: React.FC = () => {
         <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
           <div className="space-y-8 flex-1 w-full">
             <h2 className="text-4xl font-serif font-bold italic text-slate-900 flex items-center gap-4">
-              <Banknote className="text-blue-600 flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12" /> Zostań członkiem
+              <Banknote className="text-blue-600 flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12" /> {t('grants.membership.title')}
             </h2>
             <div className="p-10 bg-blue-600 text-white rounded-[4rem] shadow-xl shadow-blue-900/20 relative overflow-hidden group">
               <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 transition-transform">
@@ -288,44 +292,44 @@ const GrantsInfo: React.FC = () => {
               </div>
               <div className="space-y-6 relative z-10">
                 <div className="space-y-1">
-                  <p className="text-sm uppercase font-bold tracking-widest opacity-80">Składka roczna</p>
-                  <h3 className="text-5xl md:text-6xl font-serif font-bold">500 NOK</h3>
+                  <p className="text-sm uppercase font-bold tracking-widest opacity-80">{t('grants.membership.fee.label')}</p>
+                  <h3 className="text-5xl md:text-6xl font-serif font-bold">{t('grants.membership.fee.value')}</h3>
                 </div>
                 
                 <div className="space-y-4">
                   <p className="text-xl font-serif font-bold italic border-b border-white/20 pb-4">
-                    Kuźnia Talentów Skandii zyskuje, dzięki Tobie!
+                    {t('grants.membership.thanks')}
                   </p>
                   <p className="text-lg font-serif italic text-blue-50">
-                    Za jedyne 500 kr rocznie zyskujesz dostęp do:
+                    {t('grants.membership.access')}
                   </p>
                   <ul className="space-y-3 font-serif italic text-blue-50">
-                    <li className="flex gap-3"><span>•</span> warsztatów, kursów i zajęć artystycznych,</li>
-                    <li className="flex gap-3"><span>•</span> możliwości rozwoju osobistego i zawodowego,</li>
-                    <li className="flex gap-3"><span>•</span> spotkań z inspirującymi ludźmi,</li>
-                    <li className="flex gap-3"><span>•</span> wyjątkowych wydarzeń dla całej rodziny.</li>
+                    <li className="flex gap-3"><span>•</span> {t('grants.membership.list1')},</li>
+                    <li className="flex gap-3"><span>•</span> {t('grants.membership.list2')},</li>
+                    <li className="flex gap-3"><span>•</span> {t('grants.membership.list3')},</li>
+                    <li className="flex gap-3"><span>•</span> {t('grants.membership.list4')}.</li>
                   </ul>
                   <p className="text-sm font-bold bg-white/10 p-4 rounded-2xl border border-white/10 inline-block">
-                    To ogrom możliwości za symboliczną składkę członkowską!
+                    {t('grants.membership.symbolic')}
                   </p>
                 </div>
               </div>
             </div>
 
             <div className="p-10 bg-slate-50 rounded-[4rem] border border-blue-100 space-y-6">
-              <h3 className="text-2xl font-serif font-bold text-slate-900">Dane do płatności</h3>
+              <h3 className="text-2xl font-serif font-bold text-slate-900">{t('grants.payment.title')}</h3>
               <div className="space-y-4 font-serif italic text-slate-600">
-                <p><span className="font-bold text-slate-900 not-italic">Odbiorca:</span> Skandias Talentsmie</p>
+                <p><span className="font-bold text-slate-900 not-italic">{t('grants.payment.recipient')}</span> Skandias Talentsmie</p>
                 <div className="flex items-center gap-4">
-                  <div className="px-4 py-2 bg-[#ff5b24] text-white rounded-xl font-bold not-italic">Vipps: #968883</div>
+                  <div className="px-4 py-2 bg-[#ff5b24] text-white rounded-xl font-bold not-italic">{t('grants.payment.vipps')} #968883</div>
                 </div>
                 <div className="pt-4 border-t border-blue-100">
-                  <p className="font-bold text-slate-900 not-italic mb-1">Bank: DNB</p>
+                  <p className="font-bold text-slate-900 not-italic mb-1">{t('grants.payment.bank')}</p>
                   <p className="text-xl text-slate-900 font-bold not-italic">1520 23 71008</p>
                 </div>
                 <p className="p-4 bg-blue-50 rounded-2xl border border-blue-100 text-sm">
-                  <span className="font-bold text-blue-600 not-italic">Tytuł przelewu:</span><br />
-                  „Składka członkowska – imię i nazwisko”
+                  <span className="font-bold text-blue-600 not-italic">{t('grants.payment.titleLabel')}</span><br />
+                  {t('grants.payment.titleValue')}
                 </p>
               </div>
             </div>
@@ -333,26 +337,26 @@ const GrantsInfo: React.FC = () => {
 
           <div className="space-y-8 flex-1 w-full">
             <h3 className="text-3xl font-serif font-bold text-slate-900 flex items-center gap-4">
-               Jak zostać członkiem?
+               {t('grants.how.title')}
             </h3>
             <div className="space-y-6">
               {[
                 {
                   step: "1",
-                  title: "Wpłać składkę",
-                  desc: "Wpłać 500 kr na konto lub przez Vipps (#968883).",
-                  details: "Skandias Talentsmie\nBank: DNB\nKonto: 1520 23 71008\nTytuł: „Składka członkowska – imię i nazwisko”"
+                  title: t('grants.how.step1.title'),
+                  desc: t('grants.how.step1.desc'),
+                  details: t('grants.how.step1.details')
                 },
                 {
                   step: "2",
-                  title: "Wyślij potwierdzenie",
-                  desc: "Wyślij nam wiadomość prywatną, e-mail lub SMS z potwierdzeniem przelewu.",
-                  contact: "SMS: +47 948 03 464\nEmail: agder@skandiastalentsmie.no"
+                  title: t('grants.how.step2.title'),
+                  desc: t('grants.how.step2.desc'),
+                  contact: t('grants.how.step2.contact')
                 },
                 {
                   step: "3",
-                  title: "Gotowe!",
-                  desc: "Otrzymasz od nas potwierdzenie członkostwa oraz dostęp do wszystkich korzyści."
+                  title: t('grants.how.step3.title'),
+                  desc: t('grants.how.step3.desc')
                 }
               ].map((item, idx) => (
                 <div key={idx} className="p-8 bg-white border border-blue-50 rounded-[3rem] shadow-sm space-y-4 hover:border-blue-200 transition-all">
@@ -380,10 +384,10 @@ const GrantsInfo: React.FC = () => {
             <div className="p-10 bg-slate-900 text-white rounded-[4rem] text-center space-y-6 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.2),transparent)] pointer-events-none"></div>
               <p className="text-lg font-serif italic leading-relaxed relative z-10">
-                Dołącz już dziś i zapewnij sobie oraz swojej rodzinie dostęp do wszystkiego, co najlepsze w Skandias Talentsmie!
+                {t('grants.footer.joinNow')}
               </p>
               <Link to="/kontakt" className="inline-block px-10 py-4 bg-blue-600 text-white rounded-full font-bold text-sm sm:text-base hover:scale-105 transition-all shadow-xl shadow-blue-900/40 relative z-10">
-                Kontakt z nami
+                {t('grants.footer.contactBtn')}
               </Link>
             </div>
           </div>

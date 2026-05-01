@@ -1,11 +1,13 @@
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { REGIONS } from '../constants';
 import { Link } from 'react-router-dom';
 import { MapPin, ChevronRight, Building2 } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Branches() {
+  const { t } = useLanguage();
   return (
     <motion.div 
       initial={{ opacity: 0 }} 
@@ -14,13 +16,13 @@ export default function Branches() {
     >
       <header className="space-y-8 text-center md:text-left">
         <div className="inline-flex items-center gap-3 px-4 py-1.5 bg-slate-50 text-red-700 border border-slate-100 rounded-full text-xs font-bold uppercase tracking-widest">
-          <Building2 size={16} /> Struktura stowarzyszenia
+          <Building2 size={16} /> {t('branches.structure')}
         </div>
         <h1 className="text-5xl md:text-7xl font-serif font-bold tracking-tight text-slate-900 leading-tight">
-          Nasze <span className="text-red-700">Filie i Oddziały</span>
+          {t('branches.title').split(' ').slice(0, -2).join(' ')} <span className="text-red-700">{t('branches.title').split(' ').slice(-2).join(' ')}</span>
         </h1>
         <p className="text-2xl text-blue-900 max-w-4xl leading-relaxed font-serif italic">
-          Skandias Talentsmie to ogólnonorweska „Kuźnia Matka”, pod której skrzydłami działa 12 wyspecjalizowanych oddziałów regionalnych. Znajdź swoją najbliższą filię! 🇳🇴
+          {t('branches.subtitle')}
         </p>
       </header>
 
@@ -45,14 +47,14 @@ export default function Branches() {
                   <h3 className="text-2xl font-serif font-bold text-slate-900 group-hover:text-red-700 transition-colors">
                     {region.name}
                   </h3>
-                  <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Skandias Talentsmie Branch</p>
+                  <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">{t('branches.branchLabel')}</p>
                 </div>
                 <p className="text-slate-500 font-serif italic text-sm leading-relaxed">
-                  Skupia artystów z miast: <span className="text-slate-900 font-bold">{region.cities}</span>.
+                  {t('branches.gatheringArtists')} <span className="text-slate-900 font-bold">{region.cities}</span>.
                 </p>
               </div>
               <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between">
-                <span className="text-xs font-bold text-red-700 uppercase tracking-widest">Odkryj filię</span>
+                <span className="text-xs font-bold text-red-700 uppercase tracking-widest">{t('branches.discover')}</span>
                 <ChevronRight size={16} className="text-red-700 group-hover:translate-x-1 transition-transform" />
               </div>
             </Link>
@@ -66,17 +68,17 @@ export default function Branches() {
         </div>
         <div className="max-w-3xl relative z-10 space-y-8">
           <h2 className="text-4xl md:text-5xl font-serif font-bold italic leading-tight">
-            Nie widzisz swojego regionu? 
+            {t('branches.missingRegion.title')} 
           </h2>
           <p className="text-xl text-slate-300 font-serif italic leading-relaxed">
-            Stale rośniemy! Jeśli chciałbyś zostać koordynatorem w nowym miejscu lub pomóc w rozwoju istniejącej filii – napisz do nas. Razem możemy więcej.
+            {t('branches.missingRegion.desc')}
           </p>
           <div className="pt-4">
             <Link 
               to="/czlonkostwo" 
               className="w-full sm:w-auto inline-flex justify-center px-8 sm:px-12 py-5 bg-red-700 text-white rounded-full font-bold text-base sm:text-lg hover:scale-105 transition-all shadow-xl shadow-red-900/40"
             >
-              Dowiedz się o koordynatorach
+              {t('branches.missingRegion.btn')}
             </Link>
           </div>
         </div>

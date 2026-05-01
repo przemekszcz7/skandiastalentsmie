@@ -1,21 +1,29 @@
 
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronRight, Facebook, Mail, MapPin, Sparkles } from 'lucide-react';
+import { Menu, X, ChevronRight, Facebook, Mail, MapPin, Sparkles, Globe } from 'lucide-react';
 import { REGIONS } from '../constants';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
+import { useLanguage } from '../contexts/LanguageContext';
+
+const LANGUAGES = [
+  { code: 'pl', name: 'Polski', flag: '🇵🇱' },
+  { code: 'no', name: 'Norweski', flag: '🇳🇴' },
+  { code: 'en', name: 'Angielski', flag: '🇬🇧' },
+] as const;
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const { language: currentLang, setLanguage: setCurrentLang, t } = useLanguage();
   const location = useLocation();
 
   const mainLinks = [
-    { name: 'O nas', path: '/o-nas' },
-    { name: 'Dołącz do społeczności', path: '/dolacz' },
-    { name: 'Wydarzenia', path: '/wydarzenia' },
-    { name: 'Projekty i pomysły', path: '/projekty' },
-    { name: 'Członkostwo i koordynatorzy', path: '/czlonkostwo' },
-    { name: 'Kontakt', path: '/kontakt' },
+    { name: t('nav.about'), path: '/o-nas' },
+    { name: t('nav.join'), path: '/dolacz' },
+    { name: t('nav.events'), path: '/wydarzenia' },
+    { name: t('nav.projects'), path: '/projekty' },
+    { name: t('nav.membership'), path: '/czlonkostwo' },
+    { name: t('nav.contact'), path: '/kontakt' },
   ];
 
   return (
@@ -25,7 +33,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <Link to="/" className="flex items-center gap-2">
           <div className="w-10 h-10 overflow-hidden rounded-full border border-red-100 shadow-sm">
             <img 
-              src="https://scontent-waw2-1.xx.fbcdn.net/v/t39.30808-6/548704032_122138545526877648_1011106039652050687_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=53a332&_nc_ohc=NXNvAVA8bOYQ7kNvwENWPvP&_nc_oc=AdquXYmPysc0xlvpepiuJhe4w8OTI7z6WE3kt8lH8oS6VcKJNbBU91o-v2iKiiVOdOw&_nc_zt=23&_nc_ht=scontent-waw2-1.xx&_nc_gid=-EqqRg3rpBNwcsY51Yk7mw&_nc_ss=7b2a8&oh=00_Af2nnGJF2uXJRPdL6X01AIurwWX6V2R8urd2uBlJtaskiA&oe=69F27558" 
+              src="https://i.ibb.co/HD7kNWNg/logo.png" 
               alt="Skandias Talentsmie Logo" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
@@ -36,6 +44,25 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <button onClick={() => setIsSidebarOpen(!isSidebarOpen)} className="p-2 text-red-600">
           {isSidebarOpen ? <X /> : <Menu />}
         </button>
+      </div>
+
+      {/* Mobile Language Bar */}
+      <div className="md:hidden flex bg-slate-50 border-b border-red-50 px-4 py-2 gap-2 overflow-x-auto">
+        {LANGUAGES.map((lang) => (
+          <button
+            key={lang.code}
+            onClick={() => setCurrentLang(lang.code)}
+            className={`
+              flex-shrink-0 px-3 py-1 rounded-full text-[10px] font-bold transition-all border flex items-center gap-1.5
+              ${currentLang === lang.code
+                ? 'bg-red-600 text-white border-red-600 shadow-sm'
+                : 'bg-white text-slate-500 border-slate-100'}
+            `}
+          >
+            <span>{lang.flag}</span>
+            {lang.name}
+          </button>
+        ))}
       </div>
 
       {/* Sidebar Navigation */}
@@ -54,7 +81,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <Link to="/" className="flex flex-col items-center gap-3 text-center group">
                 <div className="w-24 h-24 overflow-hidden rounded-full transform group-hover:scale-105 transition-transform duration-500 shadow-xl border-4 border-slate-50 bg-white">
                   <img 
-                    src="https://scontent-waw2-1.xx.fbcdn.net/v/t39.30808-6/548704032_122138545526877648_1011106039652050687_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=53a332&_nc_ohc=NXNvAVA8bOYQ7kNvwENWPvP&_nc_oc=AdquXYmPysc0xlvpepiuJhe4w8OTI7z6WE3kt8lH8oS6VcKJNbBU91o-v2iKiiVOdOw&_nc_zt=23&_nc_ht=scontent-waw2-1.xx&_nc_gid=-EqqRg3rpBNwcsY51Yk7mw&_nc_ss=7b2a8&oh=00_Af2nnGJF2uXJRPdL6X01AIurwWX6V2R8urd2uBlJtaskiA&oe=69F27558" 
+                    src="https://i.ibb.co/HD7kNWNg/logo.png" 
                     alt="Skandias Talentsmie Logo" 
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
@@ -62,17 +89,39 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 </div>
                 <div>
                   <h1 className="text-xl font-bold tracking-tight text-blue-900 font-serif">Skandias Talentsmie</h1>
-                  <p className="text-[10px] uppercase tracking-widest text-red-600 font-bold flex items-center justify-center gap-1">
-                    <Sparkles size={10} className="text-sky-400" /> Kuźnia Talentów <Sparkles size={10} className="text-green-400" />
-                  </p>
+
                 </div>
               </Link>
+            </div>
+
+            <div className="px-8 py-4 border-b border-red-50/50 bg-slate-50/50">
+              <div className="flex items-center gap-2 mb-3">
+                <Globe size={12} className="text-slate-400" />
+                <span className="text-[10px] uppercase font-bold tracking-widest text-gray-400">Język / Språk / Language</span>
+              </div>
+              <div className="flex gap-2">
+                {LANGUAGES.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => setCurrentLang(lang.code)}
+                    className={`
+                      flex-1 py-1.5 rounded-lg text-[10px] font-bold transition-all border
+                      ${currentLang === lang.code
+                        ? 'bg-red-600 text-white border-red-600 shadow-md shadow-red-600/20'
+                        : 'bg-white text-slate-500 border-slate-100 hover:border-red-200'}
+                    `}
+                  >
+                    <span className="mr-1">{lang.flag}</span>
+                    {lang.code.toUpperCase()}
+                  </button>
+                ))}
+              </div>
             </div>
 
             <nav className="flex-1 overflow-y-auto py-6 scrollbar-hide">
               <div className="px-6 mb-8">
                 <h2 className="text-[10px] uppercase font-bold tracking-widest text-gray-400 mb-4 px-2 flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-sky-400" /> Menu główne
+                  <div className="w-1.5 h-1.5 rounded-full bg-sky-400" /> {t('nav.home')}
                 </h2>
                 <ul className="space-y-1">
                   {mainLinks.map((link) => (
@@ -97,7 +146,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <div className="px-6 pb-6">
                 <div className="mb-4 px-2">
                   <h2 className="text-[10px] uppercase font-bold tracking-widest text-gray-400 flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-green-400" /> Filie regionalne
+                    <div className="w-1.5 h-1.5 rounded-full bg-green-400" /> {t('common.branches')}
                   </h2>
                   <p className="text-[8px] text-red-600 font-bold uppercase tracking-tight mt-1">Skandias Talentsmie Branches</p>
                 </div>
@@ -155,7 +204,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 overflow-hidden rounded-full border-2 border-white shadow-sm ring-1 ring-red-50">
                   <img 
-                    src="https://scontent-waw2-1.xx.fbcdn.net/v/t39.30808-6/548704032_122138545526877648_1011106039652050687_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=53a332&_nc_ohc=NXNvAVA8bOYQ7kNvwENWPvP&_nc_oc=AdquXYmPysc0xlvpepiuJhe4w8OTI7z6WE3kt8lH8oS6VcKJNbBU91o-v2iKiiVOdOw&_nc_zt=23&_nc_ht=scontent-waw2-1.xx&_nc_gid=-EqqRg3rpBNwcsY51Yk7mw&_nc_ss=7b2a8&oh=00_Af2nnGJF2uXJRPdL6X01AIurwWX6V2R8urd2uBlJtaskiA&oe=69F27558" 
+                    src="https://i.ibb.co/HD7kNWNg/logo.png" 
                     alt="Logo"
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
@@ -164,14 +213,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <span className="font-bold text-blue-900 font-serif text-lg">Skandias Talentsmie</span>
               </div>
               <p className="text-sm text-slate-500 leading-relaxed italic font-serif">
-                "Kuźnia, w której hartujemy nie tylko rękodzieło i sztukę, ale także wiezi międzyludzkie."
+                {t('home.footer.quote')}
               </p>
             </div>
             <div className="space-y-4 text-sm text-slate-600">
-              <h3 className="font-bold text-slate-900 font-serif text-lg">Kontakt</h3>
+              <h3 className="font-bold text-slate-900 font-serif text-lg">{t('nav.contact')}</h3>
               <ul className="space-y-2">
                 <li className="flex items-center gap-2"><Mail size={14} className="text-red-500" /> post@skandiatalentsmie.no</li>
-                <li className="flex items-center gap-2"><MapPin size={14} className="text-red-500" /> Agder, Norwegia</li>
+                <li className="flex items-center gap-2"><MapPin size={14} className="text-red-500" /> Agder, {t('common.norway')}</li>
               </ul>
             </div>
             <div className="space-y-4 text-sm">
@@ -179,12 +228,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <div className="flex items-center gap-3">
                 <a href="https://www.facebook.com/SkandiiKuzniaTalentow" target="_blank" rel="noopener noreferrer" className="font-serif font-bold text-red-600 hover:underline">Facebook</a>
                 <span className="text-slate-300">|</span>
-                <a href="https://www.facebook.com/groups/2466069263743964" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-red-600 transition-colors">Grupa</a>
+                <a href="https://www.facebook.com/groups/2466069263743964" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-red-600 transition-colors">{t('common.group')}</a>
               </div>
             </div>
           </div>
           <div className="max-w-5xl mx-auto px-6 mt-12 pt-8 border-t border-red-50 text-center text-[10px] text-slate-400 uppercase tracking-widest font-bold">
-            &copy; 2026 Skandias Talentsmie — Pielęgnujemy Tradycję
+            &copy; 2026 Skandias Talentsmie — {t('home.footer.copy')}
           </div>
         </footer>
       </main>
