@@ -19,7 +19,7 @@ export default function About() {
             </h1>
           </header>
 
-          <div className="space-y-12">
+          <div className="space-y-12 max-w-3xl mx-auto">
             <div className="relative p-12 bg-white rounded-[4rem] border border-blue-50 shadow-sm italic font-serif text-2xl text-slate-700 leading-relaxed text-center">
               <Quote className="absolute -top-6 left-1/2 -translate-x-1/2 text-blue-100 w-20 h-20" />
               <p className="mb-6 relative z-10">
@@ -30,46 +30,37 @@ export default function About() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <p className="text-xl text-sky-600 font-serif italic font-bold">
+            <div className="space-y-12">
+              <div className="space-y-8 text-center">
+                <p className="text-2xl text-sky-600 font-serif italic font-bold">
                   {t('about.narrative.highlight')}
                 </p>
-                <div className="p-8 bg-slate-50 rounded-[3rem] border border-slate-100 space-y-4">
-                  <h3 className="font-bold text-slate-900 uppercase tracking-widest text-sm">{t('about.narrative.origin')}</h3>
-                  <ul className="space-y-3 text-slate-600 font-serif italic">
-                    <li className="flex gap-3"><span>❧</span> {t('about.narrative.originList1')}</li>
-                    <li className="flex gap-3"><span>❧</span> {t('about.narrative.originList2')}</li>
-                    <li className="flex gap-3"><span>❧</span> {t('about.narrative.originList3')}</li>
-                    <li className="flex gap-3"><span>❧</span> {t('about.narrative.originList4')}</li>
+                <div className="p-10 bg-slate-50 rounded-[4rem] border border-slate-100 space-y-6 max-w-xl mx-auto">
+                  <h3 className="font-bold text-slate-900 uppercase tracking-widest text-sm underline decoration-blue-200 underline-offset-8">{t('about.narrative.origin')}</h3>
+                  <ul className="space-y-4 text-slate-600 font-serif italic text-lg">
+                    <li className="flex items-start justify-center gap-3"><span>❧</span> {t('about.narrative.originList1')}</li>
+                    <li className="flex items-start justify-center gap-3"><span>❧</span> {t('about.narrative.originList2')}</li>
+                    <li className="flex items-start justify-center gap-3"><span>❧</span> {t('about.narrative.originList3')}</li>
+                    <li className="flex items-start justify-center gap-3"><span>❧</span> {t('about.narrative.originList4')}</li>
                   </ul>
                 </div>
-                <p className="text-2xl font-serif font-bold text-blue-600">
+                <p className="text-3xl font-serif font-bold text-blue-600 italic">
                    {t('about.narrative.conclusion')}
                 </p>
-              </div>
-              <div className="relative aspect-square rounded-[4rem] overflow-hidden bg-slate-100 group">
-                 <img 
-                  src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800" 
-                  alt="Volunteer workshop" 
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  referrerPolicy="no-referrer"
-                />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Community Section */}
       <section className="bg-slate-50 py-32 -mx-4 sm:-mx-8 px-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div className="max-w-4xl mx-auto text-center space-y-20">
           <div className="space-y-10">
-            <div className="space-y-4">
+            <div className="space-y-6">
               <span className="text-blue-600 font-bold tracking-widest uppercase text-sm block">{t('about.who.subtitle')}</span>
-              <h2 className="text-5xl font-serif font-bold text-slate-900 italic">{t('about.who.title')}</h2>
+              <h2 className="text-5xl md:text-6xl font-serif font-bold text-slate-900 italic">{t('about.who.title')}</h2>
             </div>
-            <div className="space-y-6 text-xl text-slate-600 font-serif italic leading-relaxed">
+            <div className="space-y-8 text-2xl text-slate-600 font-serif italic leading-relaxed max-w-3xl mx-auto">
               <p>
                 {t('about.who.desc1')}
               </p>
@@ -77,55 +68,20 @@ export default function About() {
                 {t('about.who.desc2')}
               </p>
             </div>
-            <div className="p-10 bg-white rounded-[3rem] border border-blue-50 shadow-sm space-y-6">
-              <h3 className="font-bold text-slate-900 uppercase tracking-widest text-sm">{t('about.for.subtitle')}</h3>
-              <p className="text-2xl font-serif font-bold text-slate-900 leading-tight">
-                {t('about.for.title')}
-              </p>
-              <div className="flex flex-wrap gap-3">
-                {[t('about.for.item1'), t('about.for.item2'), t('about.for.item3'), t('about.for.item4'), t('about.for.item5')].map((item, idx) => (
-                  <span key={idx} className="px-6 py-3 bg-slate-50 text-slate-600 rounded-full font-serif italic border border-slate-100">
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-6 relative">
-            <div className="space-y-6">
-              <div className="aspect-[3/4] bg-blue-100 rounded-[3rem] overflow-hidden translate-y-12">
-                <img 
-                  src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?auto=format&fit=crop&q=80&w=800" 
-                  alt="Workshops" 
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <div className="aspect-square bg-sky-200 rounded-[3rem]">
-                <img 
-                  src="https://images.unsplash.com/photo-1459749411177-042180ce672c?auto=format&fit=crop&q=80&w=800" 
-                  alt="Cultural events" 
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-            </div>
-            <div className="space-y-6">
-              <div className="aspect-square bg-slate-200 rounded-[3rem]">
-                <img 
-                  src="https://images.unsplash.com/photo-1534398079244-67c8ad6ad1d2?auto=format&fit=crop&q=80&w=800" 
-                  alt="Art class" 
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              <div className="aspect-[3/4] bg-blue-50 rounded-[3rem] overflow-hidden translate-y-12">
-                <img 
-                  src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&q=80&w=800" 
-                  alt="Handmade market" 
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
+            <div className="p-12 bg-white rounded-[4rem] border border-blue-50 shadow-md space-y-10 max-w-3xl mx-auto relative overflow-hidden">
+               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+               <div className="relative z-10 space-y-8">
+                <h3 className="font-bold text-slate-900 uppercase tracking-widest text-sm">{t('about.for.subtitle')}</h3>
+                <p className="text-3xl md:text-4xl font-serif font-bold text-slate-900 leading-tight">
+                  {t('about.for.title')}
+                </p>
+                <div className="flex flex-wrap gap-4 justify-center">
+                  {[t('about.for.item1'), t('about.for.item2'), t('about.for.item3'), t('about.for.item4'), t('about.for.item5')].map((item, idx) => (
+                    <span key={idx} className="px-8 py-4 bg-slate-50 text-slate-700 rounded-2xl font-serif italic border border-slate-100 text-lg shadow-sm">
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

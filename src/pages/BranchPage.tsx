@@ -3,7 +3,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { REGIONS } from '../constants';
 import { motion } from 'motion/react';
-import { MapPin, Calendar, Image as ImageIcon, Users, Info, Sparkles } from 'lucide-react';
+import { MapPin, Calendar, Info, Sparkles } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function BranchPage() {
@@ -62,29 +62,6 @@ export default function BranchPage() {
           </div>
         </section>
       </div>
-
-      <section className="space-y-10">
-        <div className="flex items-center justify-between px-4">
-          <h2 className="text-3xl font-serif font-bold flex items-center gap-4 text-slate-900">
-            <ImageIcon className="text-red-700" /> {t('branch.galleryTitle')}
-          </h2>
-          <button className="text-xs font-bold text-blue-950 uppercase tracking-widest hover:underline decoration-2 underline-offset-8">{t('branch.viewAll')}</button>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 px-4">
-          {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="aspect-[4/5] bg-slate-50 rounded-[2.5rem] overflow-hidden group relative cursor-pointer border border-slate-100 shadow-sm">
-              <img 
-                src={`https://images.unsplash.com/photo-1513519245088-0e12902e35ca?q=80&w=400&h=400&auto=format&fit=crop`} 
-                alt="Craft" 
-                className="w-full h-full object-cover sepia-[0.3] group-hover:sepia-0 transition-all duration-700 transform group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-blue-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
-                <span className="text-white text-xs font-bold uppercase tracking-[0.2em] text-center px-4 font-serif italic">{t('branch.previewWorks')}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
 
       <div className="bg-blue-950 text-white p-16 md:p-24 rounded-[4rem] text-center space-y-8 relative overflow-hidden shadow-2xl shadow-blue-900/20">
         <div className="absolute -top-10 -right-10 w-64 h-64 opacity-5 pointer-events-none rotate-12">
