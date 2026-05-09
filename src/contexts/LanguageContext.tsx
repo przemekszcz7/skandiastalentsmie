@@ -78,6 +78,8 @@ export const translations: TranslationSructure = {
   'events.address': { pl: 'Adres', no: 'Adresse', en: 'Address' },
   'events.gallery': { pl: 'Galeria zdjęć', no: 'Bildegalleri', en: 'Photo gallery' },
   'events.gallerySubtitle': { pl: 'Zapraszamy do obejrzenia zdjęć z tego wydarzenia.', no: 'Velkommen til å se bildene fra dette arrangementet.', en: 'Welcome to view the photos from this event.' },
+  'events.tabPhotos': { pl: 'Zdjęcia', no: 'Bilder', en: 'Photos' },
+  'events.tabVideos': { pl: 'Filmy', no: 'Videoer', en: 'Videos' },
   'events.back': { pl: 'Wróć do listy', no: 'Tilbake til listen', en: 'Back to list' },
   'events.comingSoon.title': { pl: 'Kolejne terminy wkrótce', no: 'Nye datoer kommer snart', en: 'New dates coming soon' },
   'events.comingSoon.subtitle': { pl: '"Cierpliwość rzemieślnika to połowa sukcesu. Pracujemy nad wdrożeniem pełnego kalendarza na rok 2026."', no: '"Håndverkerens tålmodighet er halve suksessen. Vi jobber med å implementere den fulle kalenderen for 2026."', en: '"A craftsman\'s patience is half the success. We are working on implementing the full calendar for 2026."' },

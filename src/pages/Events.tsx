@@ -89,7 +89,7 @@ kiedy spotykają się właściwi ludzie.
 Dziękujemy Wam – każdej z osobna.
 Za to, że przyszłyście.
 Za to, że chciałyście tworzyć.
-Za to, że podzieliłyście się sobą – swoją energią, swoją historią, swoją historią, swoim czasem.
+Za to, że podzieliłyście się sobą – swoją energią, swoją historią, swoim czasem.
 Dziękujemy tym, które były z nami pierwszy raz –
 za zaufanie i otwartość.
 I tym, które wracają –
@@ -108,22 +108,22 @@ Patrząc na ten wieczór, czujemy jedno.
 To nie są pojedyncze spotkania.
 To jest coś, co rośnie.
 Społeczność kobiet, które chcą:
-tworzyć,
-spotykać się,
-rozmawiać,
-być razem.
-Bez udawania.
-Bez presji.
-Prawdziwie.
-⸻
-✨ TO NIE BYŁ KONIEC
-To był piękny wieczór.
-Ale nie ostatni.
-Bo już wiemy, że chcemy więcej takich spotkań.
-Więcej przestrzeni.
-Więcej tworzenia.
-I już dziś zapraszamy Was na kolejne warsztaty…
-Bo czujemy, że to dopiero początek czegoś naprawdę wyjątkowego. 🌸✨`,
+                tworzyć,
+                spotykać się,
+                rozmawiać,
+                być razem.
+                Bez udawania.
+                Bez presji.
+                Prawdziwie.
+                ⸻
+                ✨ TO NIE BYŁ KONIEC
+                To był piękny wieczór.
+                Ale nie ostatni.
+                Bo już wiemy, że chcemy więcej takich spotkań.
+                Więcej przestrzeni.
+                Więcej tworzenia.
+                I już dziś zapraszamy Was na kolejne warsztaty…
+                Bo czujemy, że to dopiero początek czegoś naprawdę wyjątkowego. 🌸✨`,
       images: [
         { url: 'https://iili.io/Bt5MniQ.md.jpg', title: '', desc: '' },
         { url: 'https://iili.io/Bt72umx.md.jpg', title: '', desc: '' },
@@ -200,6 +200,11 @@ Bo czujemy, że to dopiero początek czegoś naprawdę wyjątkowego. 🌸✨`,
         { url: 'https://iili.io/Bt7o7Lb.md.jpg', title: '', desc: '' },
         { url: 'https://iili.io/Bt7oXhg.md.jpg', title: '', desc: '' },
         { url: 'https://iili.io/Bt7oGkP.md.jpg', title: '', desc: '' }
+      ],
+      videos: [
+        'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1853472245335618%2F&show_text=false&width=267&t=0',
+        'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F986345500485494%2F&show_text=false&width=267&t=0',
+        'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F899546609784127%2F&show_text=false&width=267&t=0'
       ]
     },
     {
@@ -536,6 +541,13 @@ I już nie możemy się doczekać, co będzie dalej. 💫`,
         { url: 'https://iili.io/BtczIn9.md.jpg', title: '', desc: '' },
         { url: 'https://iili.io/Btcznu2.md.jpg', title: '', desc: '' },
         { url: 'https://iili.io/BtczTGe.md.jpg', title: '', desc: '' }
+      ],
+      videos: [
+        'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1635224384265747%2F&show_text=false&width=267&t=0',
+        'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1269633214623944%2F&show_text=false&width=267&t=0',
+        'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1456209402547509%2F&show_text=false&width=267&t=0',
+        'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1291886076232414%2F&show_text=false&width=267&t=0',
+        'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F925444813651697%2F&show_text=false&width=267&t=0'
       ]
     },
     {
@@ -795,6 +807,9 @@ Bo czujemy, że to, co się zaczęło… ma przed sobą piękną drogę`,
         { url: 'https://iili.io/BtccBfV.md.jpg', title: '', desc: '' },
         { url: 'https://iili.io/BtccYfp.md.jpg', title: '', desc: '' },
         { url: 'https://iili.io/BtcccgI.md.jpg', title: '', desc: '' }
+      ],
+      videos: [
+        'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F27185916434342409%2F&show_text=false&width=265&t=0'
       ]
     },
     {
@@ -1019,6 +1034,9 @@ I… do zobaczenia. ✨`,
         { url: 'https://iili.io/BtcMdOP.md.jpg', title: '', desc: '' },
         { url: 'https://iili.io/BtcMBqJ.md.jpg', title: '', desc: '' },
         { url: 'https://iili.io/BtcMfsa.md.jpg', title: '', desc: '' }
+      ],
+      videos: [
+        'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F939380055298159%2F&show_text=false&width=267&t=0'
       ]
     },
     {
@@ -1447,6 +1465,9 @@ I wiemy jedno – to dopiero początek. ✨`,
         { url: 'https://i.postimg.cc/V6y9MvCc/photo-122149885988877648.jpg', title: '', desc: '' },
         { url: 'https://i.postimg.cc/XJMKFqC7/photo-122149886018877648.jpg', title: '', desc: '' },
         { url: 'https://i.postimg.cc/3RMjpNvK/photo-122149886072877648.jpg', title: '', desc: '' }
+      ],
+      videos: [
+        'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F900922776218301%2F&show_text=false&width=267&t=0'
       ]
     },
     {
@@ -1750,7 +1771,10 @@ Tworzymy przestrzeń, w której ludzie mogą rosnąć, uczyć się, poznawać si
         { url: 'https://i.postimg.cc/vBLnVzy2/photo-122160675320877648.jpg', title: '', desc: '' },
         { url: 'https://i.postimg.cc/FRgSLZv8/photo-122160675380877648.jpg', title: '', desc: '' },
         { url: 'https://i.postimg.cc/1XmqcqRH/photo-122160675392877648.jpg', title: '', desc: '' }
-
+      ],
+      videos: [
+        'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1533340987741932%2F&show_text=false&width=267&t=0',
+        'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1987626808837323%2F&show_text=false&width=267&t=0'
       ]
     }
   ];

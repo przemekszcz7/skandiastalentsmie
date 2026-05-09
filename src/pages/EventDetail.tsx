@@ -12,6 +12,7 @@ export default function EventDetail() {
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
   const [brokenImages, setBrokenImages] = useState<Set<string>>(new Set());
   const [isExpanded, setIsExpanded] = useState(false);
+  const [activeTab, setActiveTab] = useState<'photos' | 'videos'>('photos');
 
   const event = events.find(e => e.id === eventId);
 
@@ -125,44 +126,116 @@ export default function EventDetail() {
       </div>
 
       <section className="space-y-12 pt-12 border-t border-slate-100">
-        <div className="flex items-center gap-8">
-          <h2 className="text-3xl font-serif font-bold text-slate-900 whitespace-nowrap">{t('events.gallery')}</h2>
-          <div className="h-px w-full bg-slate-100" />
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
+          <div className="flex items-center gap-8 flex-1">
+            <h2 className="text-3xl font-serif font-bold text-slate-900 whitespace-nowrap">
+              {activeTab === 'photos' ? t('events.tabPhotos') : t('events.tabVideos')}
+            </h2>
+            <div className="h-px w-full bg-slate-100" />
+          </div>
+
+          {event.videos && event.videos.length > 0 && (
+            <div className="flex items-center p-1 bg-slate-100 rounded-full w-fit">
+              <button
+                onClick={() => setActiveTab('photos')}
+                className={`px-8 py-2 rounded-full transition-all text-sm font-bold ${
+                  activeTab === 'photos' 
+                    ? 'bg-blue-950 text-white shadow-lg' 
+                    : 'text-slate-500 hover:text-blue-950'
+                }`}
+              >
+                {t('events.tabPhotos')}
+              </button>
+              <button
+                onClick={() => setActiveTab('videos')}
+                className={`px-8 py-2 rounded-full transition-all text-sm font-bold flex items-center gap-2 ${
+                  activeTab === 'videos' 
+                    ? 'bg-blue-950 text-white shadow-lg' 
+                    : 'text-slate-500 hover:text-blue-950'
+                }`}
+              >
+                {t('events.tabVideos')}
+                <span className="inline-flex items-center justify-center w-5 h-5 bg-red-700 text-white rounded-full text-[10px]">
+                  {event.videos.length}
+                </span>
+              </button>
+            </div>
+          )}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {event.images.filter(img => !brokenImages.has(img.url)).map((img, i) => (
-            <motion.div 
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: (i % 8) * 0.05 }}
-              className="space-y-4 group"
-            >
-              <div 
-                className="aspect-[4/5] rounded-[2rem] overflow-hidden bg-slate-50 border border-slate-100 relative shadow-sm cursor-zoom-in"
-                onClick={() => setZoomedImage(img.url)}
-              >
-                <img 
-                  src={img.url} 
-                  alt={img.title || `Gallery image ${i}`} 
-                  onError={() => handleImageError(img.url)}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
-                />
-                <div className="absolute inset-0 bg-blue-950/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <ZoomIn size={48} className="text-white scale-50 group-hover:scale-100 transition-transform duration-500" />
-                </div>
-              </div>
-              {img.title && (
-                <div className="px-2 space-y-1">
-                  <h4 className="font-serif font-bold text-slate-900 italic">{img.title}</h4>
-                  <p className="text-sm text-slate-500 font-serif italic">{img.desc}</p>
-                </div>
-              )}
-            </motion.div>
-          ))}
-        </div>
+        <motion.div
+          key={activeTab}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          {activeTab === 'photos' ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+              {event.images.filter(img => !brokenImages.has(img.url)).map((img, i) => (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: (i % 8) * 0.05 }}
+                  className="space-y-4 group"
+                >
+                  <div 
+                    className="aspect-[4/5] rounded-[2rem] overflow-hidden bg-slate-50 border border-slate-100 relative shadow-sm cursor-zoom-in"
+                    onClick={() => setZoomedImage(img.url)}
+                  >
+                    <img 
+                      src={img.url} 
+                      alt={img.title || `Gallery image ${i}`} 
+                      onError={() => handleImageError(img.url)}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                    />
+                    <div className="absolute inset-0 bg-blue-950/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <ZoomIn size={48} className="text-white scale-50 group-hover:scale-100 transition-transform duration-500" />
+                    </div>
+                  </div>
+                  {img.title && (
+                    <div className="px-2 space-y-1">
+                      <h4 className="font-serif font-bold text-slate-900 italic">{img.title}</h4>
+                      <p className="text-sm text-slate-500 font-serif italic">{img.desc}</p>
+                    </div>
+                  )}
+                </motion.div>
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+              {event.videos?.map((videoUrl, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: i * 0.1 }}
+                  className="space-y-4"
+                >
+                  <div className="aspect-[9/16] rounded-[2rem] overflow-hidden bg-black border-4 border-slate-50 shadow-xl relative">
+                    <iframe 
+                      width="100%" 
+                      height="100%" 
+                      src={videoUrl} 
+                      frameBorder="0" 
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                      allowFullScreen={true}
+                      style={{ position: 'absolute', top: 0, left: 0 }}
+                      referrerPolicy="unsafe-url"
+                    ></iframe>
+                  </div>
+                  <div className="px-2">
+                    <div className="flex items-center gap-2 text-red-700 font-serif italic text-xs font-bold">
+                      <span className="w-4 h-px bg-red-700/30" />
+                      Wideo #{i + 1}
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          )}
+        </motion.div>
       </section>
 
       <AnimatePresence>

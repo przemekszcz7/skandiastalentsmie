@@ -14,4 +14,5 @@ export interface Event {
   region: string;
   description: string;
   images: EventImage[];
+  videos?: string[];
 }
