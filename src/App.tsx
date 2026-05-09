@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import JoinUs from './pages/JoinUs';
 import Events from './pages/Events';
+import EventDetail from './pages/EventDetail';
 import Projects from './pages/Projects';
 import Membership from './pages/Membership';
 import Contact from './pages/Contact';
@@ -33,6 +34,7 @@ export default function App() {
             <Route path="/o-nas" element={<About />} />
             <Route path="/dolacz" element={<JoinUs />} />
             <Route path="/wydarzenia" element={<Events />} />
+            <Route path="/wydarzenia/:eventId" element={<EventDetail />} />
             <Route path="/projekty" element={<Projects />} />
             <Route path="/czlonkostwo" element={<Membership />} />
             <Route path="/kontakt" element={<Contact />} />

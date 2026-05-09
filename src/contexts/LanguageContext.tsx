@@ -30,6 +30,7 @@ export const translations: TranslationSructure = {
   'common.contactUs': { pl: 'Skontaktuj się z nami', no: 'Kontakt oss', en: 'Contact us' },
   'common.norway': { pl: 'Norwegia', no: 'Norge', en: 'Norway' },
   'common.group': { pl: 'Grupa', no: 'Gruppe', en: 'Group' },
+  'common.back': { pl: 'Wróć', no: 'Tilbake', en: 'Back' },
 
   // Home Page
   'home.subtitle': { pl: 'Odkrywamy pasje, łączymy talenty', no: 'Oppdager lidenskaper, forener talenter', en: 'Discovering passions, uniting talents' },
@@ -75,6 +76,7 @@ export const translations: TranslationSructure = {
   'events.location': { pl: 'Lokalizacja', no: 'Sted', en: 'Location' },
   'events.address': { pl: 'Adres', no: 'Adresse', en: 'Address' },
   'events.gallery': { pl: 'Galeria zdjęć', no: 'Bildegalleri', en: 'Photo gallery' },
+  'events.gallerySubtitle': { pl: 'Zapraszamy do obejrzenia zdjęć z tego wydarzenia.', no: 'Velkommen til å se bildene fra dette arrangementet.', en: 'Welcome to view the photos from this event.' },
   'events.back': { pl: 'Wróć do listy', no: 'Tilbake til listen', en: 'Back to list' },
   'events.comingSoon.title': { pl: 'Kolejne terminy wkrótce', no: 'Nye datoer kommer snart', en: 'New dates coming soon' },
   'events.comingSoon.subtitle': { pl: '"Cierpliwość rzemieślnika to połowa sukcesu. Pracujemy nad wdrożeniem pełnego kalendarza na rok 2026."', no: '"Håndverkerens tålmodighet er halve suksessen. Vi jobber med å implementere den fulle kalenderen for 2026."', en: '"A craftsman\'s patience is half the success. We are working on implementing the full calendar for 2026."' },
