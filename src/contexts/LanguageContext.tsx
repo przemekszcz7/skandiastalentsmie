@@ -25,12 +25,13 @@ export const translations: TranslationSructure = {
   'common.branches': { pl: 'Filie regionalne', no: 'Regionale filialer', en: 'Regional Branches' },
   'common.visitFacebook': { pl: 'Odwiedź nas', no: 'Besøk oss', en: 'Visit us' },
   'common.email': { pl: 'Napisz do nas', no: 'Send oss e-post', en: 'Email us' },
-  'common.readMore': { pl: 'Czytaj więcej', no: 'Les mer', en: 'Read more' },
   'common.joinCommunity': { pl: 'Dołącz do wspólnoty', no: 'Bli med i fellesskapet', en: 'Join the community' },
   'common.contactUs': { pl: 'Skontaktuj się z nami', no: 'Kontakt oss', en: 'Contact us' },
   'common.norway': { pl: 'Norwegia', no: 'Norge', en: 'Norway' },
   'common.group': { pl: 'Grupa', no: 'Gruppe', en: 'Group' },
   'common.back': { pl: 'Wróć', no: 'Tilbake', en: 'Back' },
+  'common.readMore': { pl: 'Rozwiń opis', no: 'Les mer', en: 'Read more' },
+  'common.showLess': { pl: 'Zwiń opis', no: 'Vis mindre', en: 'Show less' },
 
   // Home Page
   'home.subtitle': { pl: 'Odkrywamy pasje, łączymy talenty', no: 'Oppdager lidenskaper, forener talenter', en: 'Discovering passions, uniting talents' },

@@ -11,6 +11,7 @@ export default function EventDetail() {
   const { t } = useLanguage();
   const [zoomedImage, setZoomedImage] = useState<string | null>(null);
   const [brokenImages, setBrokenImages] = useState<Set<string>>(new Set());
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const event = events.find(e => e.id === eventId);
 
@@ -78,9 +79,30 @@ export default function EventDetail() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
         <div className="lg:col-span-2 space-y-8">
           <div className="prose prose-slate prose-lg max-w-none">
-            <p className="text-xl text-slate-600 font-serif italic leading-relaxed whitespace-pre-line">
-              {event.description}
-            </p>
+            <div className="relative">
+              <motion.div
+                initial={false}
+                animate={{ height: isExpanded ? 'auto' : '280px' }}
+                className={`overflow-hidden transition-all duration-500 ease-in-out`}
+              >
+                <p className="text-xl text-slate-600 font-serif italic leading-relaxed whitespace-pre-line">
+                  {event.description}
+                </p>
+              </motion.div>
+              
+              {!isExpanded && event.description.length > 300 && (
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+              )}
+            </div>
+
+            {event.description.length > 300 && (
+              <button
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="mt-4 px-6 py-2 bg-blue-950 text-white rounded-full text-sm font-bold hover:bg-red-700 transition-colors shadow-lg active:scale-95"
+              >
+                {isExpanded ? t('common.showLess') : t('common.readMore')}
+              </button>
+            )}
           </div>
           
           <div className="flex items-center gap-2 px-6 py-4 bg-slate-50 rounded-2xl text-slate-600">
